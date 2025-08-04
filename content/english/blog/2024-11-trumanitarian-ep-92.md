@@ -12,7 +12,7 @@ tags:
   - social impact
   - open source
   - steward ownership
-featured: true
+featured: false
 draft: false
 image: "/blog/2024-11-trumanitarian-ep-92/trumanitarian-alchemist.jpg"
 ---
