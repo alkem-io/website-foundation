@@ -1,12 +1,12 @@
 ---
 title: "Learnings on the Road to Digital Autonomy — Building a European Tech Start-up"
 date: "2025-08-04"
-description: "At Alkemio, we’ve chosen the harder path, avoiding Big Tech to stay aligned with our public purpose. In this post, we share learnings on infrastructure, funding, policy, and trust. It’s a glimpse into the trade-offs and the values that guide our work."
+description: "At Alkemio, we’ve chosen the harder path, limiting our reliance on Big Tech to stay aligned with our purpose. In this post, we share our learnings from our decision and its impact on our infrastructure, funding, policy, and trust. It’s a glimpse into the trade-offs and the values that guide our work."
 authors:
   - smyth-fintan
   - smyth-neil
   - tharakan-robin
-summary: "At Alkemio, we’ve chosen the harder path, avoiding Big Tech to stay aligned with our public purpose. In this post, we share learnings on infrastructure, funding, policy, and trust. It’s a glimpse into the trade-offs and the values that guide our work."
+summary: "At Alkemio, we’ve chosen the harder path, limiting our reliance on Big Tech to stay aligned with our purpose. In this post, we share our learnings from our decision and its impact on our infrastructure, funding, policy, and trust. It’s a glimpse into the trade-offs and the values that guide our work."
 tags:
   - digital autonomy
   - public interest technology
@@ -45,7 +45,7 @@ We learned that if we wanted to be free from extractive ecosystems, we need to b
 
 ![](/blog/2025-08_digital-autonomy-journey/quote-1.png)
 
-### Europe Talks a Big Game on Digital Sovereignty but Support Remains Shallow 
+### Learning 2: Europe Talks a Big Game on Digital Sovereignty but Support Remains Shallow 
 
 Digital sovereignty is everywhere in European policy discourse. It’s in strategy papers, speeches, and funding calls. But on the ground, start-ups trying to build on digital autonomy principles face a different reality: fragmented regulation, slow procurement, and risk-averse institutions still defaulting to Big Tech . 
 
