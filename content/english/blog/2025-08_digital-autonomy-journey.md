@@ -76,7 +76,9 @@ We don’t need to build everything ourselves. But we do need infrastructure we 
 
 ### Learning 5: Governance is too often an afterthought, and that must change 
 
-In the push toward digital autonomy, many actors focus on infrastructure, data sovereignty, and technical capabilities, but neglect governance. Yet governance defines who holds power, who makes decisions, and how accountability is enforced. When treated as an afterthought, it leads to systems that reproduce the very centralisation and opacity we seek to overcome. Governance cannot be retrofitted. It must be embedded from the outset - co-created, transparent, and aligned with the public interest. Without it, digital autonomy risks becoming a hollow ideal, rather than a meaningful shift in control and agency. 
+In the push toward digital autonomy, the focus is often on the technical functionality and capabilities. Yet governance defines who holds power – both now and in the future. It impacts who makes decisions, who benefits from technology and how accountability is enforced. When treated as an afterthought, it carries the risk that we end up back where we are now.  
+
+Governance cannot be retrofitted. It must be embedded from the outset - co-created, transparent, and aligned with the public interest. Without it, digital autonomy risks becoming a hollow ideal, rather than a meaningful shift in control and agency. 
 
 ### Building real autonomy starts with clear choices 
 
