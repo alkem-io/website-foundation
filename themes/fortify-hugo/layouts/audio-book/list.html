@@ -3,8 +3,8 @@
   <div class="container">
     <div class="row">
       <div class="mx-auto text-center lg:col-8 xl:col-9">
-        <h1 class="h2 md:h1 mb-6">The Alkemio Story: Our Why</h1>
-        <p class="text-lg mb-10">Listen to the audiobooks below.</p>
+        <h1 class="h2 md:h1 mb-6">{{ .Title }}</h1>
++       <p class="text-lg mb-10">{{ with .Description }}{{ . }}{{ else }}Listen to the audiobooks below.{{ end }}</p>
       </div>
 
       
@@ -60,7 +60,7 @@
               <option value="2">2x</option>
             </select>
           </div>
-          <a href="/audio/alkemio-why-audio-book-2025-08.mp3" download class="r-1 font-semibold hover:underline whitespace-nowrap">
+          <a href="/audio/alkemio-why-audio-book-2025-08.mp3" download class="mr-1 font-semibold hover:underline whitespace-nowrap">
             ⬇ Download Audio
           </a>
         </div>
