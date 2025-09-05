@@ -6,20 +6,19 @@
         <h1 class="h2 md:h1 mb-6">{{ .Title }}</h1>
         <p class="text-lg mb-10">{{ with .Description }}{{ . }}{{ else }}Listen to the audiobooks below.{{ end }}</p>
       </div>
-
       
       <div class="col-12 mb-12">
-        <h2 class="h3 mb-4">Audio Book (Summary)</h2>
+        <h2 class="h3 mb-4">Audio Book (Extended)</h2>
         <audio controls class="w-full mb-2" data-default-speed="1.25">
-          <source src="/audio/alkemio-why-audio-book-summary-2025-08.mp3" type="audio/mpeg">
+          <source src="/audio/alkemio-why-audio-book-2025-08.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
 
         
         <div class="flex justify-between items-center mb-4 text-sm">
           <div>
-            <label for="speed1" class="mr-1 font-semibold">Playback Speed:</label>
-            <select id="speed1" class="playback-rate-selector border px-7 py-1 rounded">
+            <label for="speed2" class="mr-1 font-semibold">Playback Speed:</label>
+            <select id="speed2" class="playback-rate-selector border px-7 py-1 rounded">
               <option value="0.5">0.5x</option>
               <option value="0.75">0.75x</option>
               <option value="1">1x</option>
@@ -28,29 +27,16 @@
               <option value="2">2x</option>
             </select>
           </div>
-          <a href="/audio/alkemio-why-audio-book-summary-2025-08.mp3" download class="mr-1 font-semibold hover:underline whitespace-nowrap">
+          <a href="/audio/alkemio-why-audio-book-2025-08.mp3" download class="mr-1 font-semibold hover:underline whitespace-nowrap">
             ⬇ Download Audio
           </a>
         </div>
 
         <!-- Download links -->
         <!--<div class="flex gap-4 mt-2">
-          <a href="/audio/alkemio-why-audio-book-summary-2025-08.pdf" download class="btn btn-secondary">Download Transcript</a>
-        </div>
-      </div>-->
-
-      <div class="py-5 my-5"></div>
-
-      <div class="col-12 mb-12">
-        <h4 class="h3 mb-4">You can also listen to an extended version of this audio book</h4>
-        <a href="/audio/alkemio-why-audio-book-2025-08.mp3">Find the extended version here.</a>
-      </div>
-
-        <!-- Download links -->
-        <!--<div class="flex gap-4 mt-2">
           <a href="/audio/alkemio-why-audio-book-2025-08.pdf" download class="btn btn-secondary">Download Transcript</a>
         </div>
-      </div> -->
+      </div>-->
     </div>
   </div>
 </section>
@@ -74,7 +60,7 @@
       }
     });
   });
-</script> 
+</script>
 
 
 <style>
