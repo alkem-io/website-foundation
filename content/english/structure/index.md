@@ -99,7 +99,7 @@ It is simply a *much stronger* guarantee than relying on the governance of a Fou
 
 One key point to highlight is that Stichting Golden Share has a formal process called the **Guardian Check** that must be passed *before* they accept ownership of the veto rights. This is a detailed review of all legal documents, verifying that the key principles of steward-ownership are locked in, and includes both a review by Stichting Golden Share as well as an independent legal review. 
 
-In our case this process took approximately 3 months to go through - a non-trivial investment of time and effort from all parties that provides a strong foundation for trust in the the legal setup. 
+In our case this process took approximately 3 months to go through - a non-trivial investment of time and effort from all parties that provides a strong foundation for trust in the legal setup. 
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
