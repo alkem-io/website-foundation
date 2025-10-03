@@ -51,7 +51,7 @@ Core features of Steward Ownership, as implemented by Alkemio, include:
 
 The new organizational structure implemented by Alkemio is shown below. All named entities are registered in The Netherlands.
 
-![Alkemio Group Structure]({{< baseurl >}}/images/alkemio-group-structure_2025.svg)
+![Alkemio Group Structure](/legal/alkemio-group-structure-2025.svg)
 
 **Alkemio Holding** is the Steward Ownership entity. It is a commercially and professionally run business to achieve the purpose. The value generated is distributed in accordance with the principles of Steward Ownership and the purpose.
 
@@ -66,7 +66,9 @@ The details of all entities in this diagram and their roles are:
 - **Alkemio Holding BV**: the central entity, bringing together all the stakeholders. It is a holding company, raising capital, receiving and distributing profits, holding assets (IP), etc.
 - **Stichting Alkemio**: the original entity, whose role evolves to being the "steward" for Alkemio Holding. The board of Stichting Alkemio are the stewards.
 - **Stichting Golden Share**: an independent foundation whose purpose is to hold "golden shares" in steward ownership ventures. It is obliged to act according to the principle of steward ownership.
-- **Operating companies**: there are currently two operating entities: a) *Alkemio BV*, based in The Netherlands (The Hague) providing the Alkemio platform and services to the market. It is 100% owned by Alkemio Holding. b)  *Alkemio Bulgaria EDPK*, based in Bulgaria providing services for the development and operational management of the platform. It is 100% owned by Alkemio BV.
+- **Operating companies**: there are currently two operating entities: 
+  - *Alkemio BV*, based in The Netherlands (The Hague) providing the Alkemio platform and services to the market. It is 100% owned by Alkemio Holding BV. 
+  - *Alkemio Bulgaria EDPK*, based in Bulgaria providing services for the development and operational management of the platform. It is 100% owned by Alkemio BV.
 - **STAK Participanten Alkemio**: manages the conversion of certain classes of Alkemio Holding shares to certificates (so economic rights), and facilitates the transfer of certificates without involving a notary.
 
 It is important to highlight that neither Alkemio nor any of the key stakeholders of Alkemio have influence or control of Stichting Golden Share. 
@@ -87,9 +89,7 @@ It is important to highlight that neither Alkemio nor any of the key stakeholder
 
 The adoption of Steward Ownership can be seen as a **double lock** on the purpose of Alkemio.
 
-This is important for two key reasons:
-- Investors in Alkemio do not have voting rights, so they are fully dependent on the governance that is in place.
-- As Alkemio achieves significant scale, the venture will be highly valuable - so the locks need to be put in place now to prevent any temptation in the future.
+This is important for protecting the mission as the value of Alkemio increases. Essentially putting in extremely strong locks now to prevent any temptation in the future - for both the stewards as well as all those contributing to the mission (investors, staff, partners).
 
 It is simply a *much stronger* guarantee than relying on the governance of a Foundation.
 
