@@ -158,7 +158,8 @@ Alkemio is making great progress, in terms of both organization structure and ma
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
 
-#### Roadmap near term
+#### Roadmap near term 
+
 The implementation of steward-ownership for Alkemio has been in two phases:
 - **2023 Q1**: establishing of Alkemio Holding, Alkemio BV and with Stichting de Prioriteit as the PC holder. This involved transferring of the operations from Stichting Alkemio to Alkemio BV - and allowed Alkemio to raise our first external funding. Details of this phase of our journey is [available here](../structure_2023/). 
 - **2025 Q3**: strengthening of the steward-ownership setup. This put in place an explicit Steward Regulations document together with new articles for Stichting Alkemio to define 5 steward positions with requirements. It also involved moving the PC holder from Stichting de Prioriteit to Stichting Golden Share. The reason for this change was that Stichting de Prioriteit is stopping the guardian role, and also as there is a stronger set of enterprises for which Stichting Golden Share guarantees the purpose - which in turn means a stronger purpose guarantee for Alkemio! Finally this set of updates also created additional CC certificates and CT certificates for fund raising and staff participation respectively.
