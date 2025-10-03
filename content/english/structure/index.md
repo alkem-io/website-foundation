@@ -51,7 +51,7 @@ Core features of Steward Ownership, as implemented by Alkemio, include:
 
 The new organizational structure implemented by Alkemio is shown below. All named entities are registered in The Netherlands.
 
-![Alkemio Group Structure]({{< baseurl >}}/images/alkemio-group-structure.svg)
+![Alkemio Group Structure]({{< baseurl >}}/images/alkemio-group-structure_2025.svg)
 
 **Alkemio Holding** is the Steward Ownership entity. It is a commercially and professionally run business to achieve the purpose. The value generated is distributed in accordance with the principles of Steward Ownership and the purpose.
 
@@ -66,8 +66,7 @@ The details of all entities in this diagram and their roles are:
 - **Alkemio Holding BV**: the central entity, bringing together all the stakeholders. It is a holding company, raising capital, receiving and distributing profits, holding assets (IP), etc.
 - **Stichting Alkemio**: the original entity, whose role evolves to being the "steward" for Alkemio Holding. The board of Stichting Alkemio are the stewards.
 - **Stichting Golden Share**: an independent foundation whose purpose is to hold "golden shares" in steward ownership ventures. It is obliged to act according to the principle of steward ownership.
-- **Alkemio BV**: the operating entity in The Netherlands that actually provides the Alkemio services to the market. It is 100% owned by Alkemio Holding. Over time there could potentially be multiple operating companies depending on the needs of the business, for example in multiple countries or for separate business lines.
-- **Alkemio Bulgaria EDPK**: the operating entity in Bulgaria that provides services for the development and operational management of the platform. that actually provides the Alkemio services to the market. It is 100% owned by Alkemio BV.
+- **Operating companies**: there are currently two operating entities: a) *Alkemio BV*, based in The Netherlands (The Hague) providing the Alkemio platform and services to the market. It is 100% owned by Alkemio Holding. b)  *Alkemio Bulgaria EDPK*, based in Bulgaria providing services for the development and operational management of the platform. It is 100% owned by Alkemio BV.
 - **STAK Participanten Alkemio**: manages the conversion of certain classes of Alkemio Holding shares to certificates (so economic rights), and facilitates the transfer of certificates without involving a notary.
 
 It is important to highlight that neither Alkemio nor any of the key stakeholders of Alkemio have influence or control of Stichting Golden Share. 
@@ -120,7 +119,7 @@ Alkemio has invested significant time, money, and energy into the above structur
 
 We believe this structure has the potential to benefit many other ventures looking to make positive contributions to society, so we are sharing our documents and please also reach out if you would like to learn more from our journey so far!
 
-**[Purpose Foundation case study on Alkemio]({{< baseurl >}}/case_studies/purpose-alkemio-casestudyen-31032024.pdf)**: In addition to our materials which are shared below, Alkemio is also proud to be featured as a case study from [Purpose Economy](https://purpose-economy.org/en/), the leading champion for Steward Ownership.
+**[Purpose Foundation case study on Alkemio](/case_studies/purpose-alkemio-casestudyen-31032024.pdf)**: In addition to our materials which are shared below, Alkemio is also proud to be featured as a case study from [Purpose Economy](https://purpose-economy.org/en/), the leading champion for Steward Ownership.
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
@@ -137,12 +136,12 @@ Alkemio would be delighted and honored if other parties would be able to learn f
 
 #### Key documents
 
-- **[Stichting Alkemio Articles of Association (AoA)]({{< baseurl >}}/legal/stichting_alkemio/stichting_alkemio-statuten_2025_09.pdf)** (Dutch)
-- **[Stichting Alkemio Steward Regulations]({{< baseurl >}}/legal/stichting_alkemio/stichting_alkemio_steward_regulations_v1.0.pdf)** (Dutch)
-- **[Alkemio Holding Articles of Association (AoA)]({{< baseurl >}}/legal/alkemio_holding/alkemio_holding_statuten.pdf)** (Dutch)
-- **[Alkemio Holding Shareholders Agreement (SHA)]({{< baseurl >}}/legal/alkemio_holding/alkemio_holding_shareholders_agreement_v2.0.pdf)** (English)
-- **[STAK Participanten Alkemio Articles of Association (AoA)]({{< baseurl >}}/legal/alkemio_participanten_stak/stak_participanten_alkemio_akte_oprichting.pdf)** (Dutch)
-- **[STAK Participanten Alkemio Conditions]({{< baseurl >}}/legal/alkemio_participanten_stak/stak_participanten_alkemio_administratievoorwaarden.pdf)** (Dutch)
+- **[Stichting Alkemio Articles of Association (AoA)](/legal/stichting_alkemio/stichting_alkemio-statuten_2025_09.pdf)** (Dutch)
+- **[Stichting Alkemio Steward Regulations](/legal/stichting_alkemio/stichting_alkemio_steward_regulations_v1.0.pdf)** (Dutch)
+- **[Alkemio Holding Articles of Association (AoA)](/legal/alkemio_holding/alkemio_holding_statuten.pdf)** (Dutch)
+- **[Alkemio Holding Shareholders Agreement (SHA)](/legal/alkemio_holding/alkemio_holding_shareholders_agreement_v2.0.pdf)** (English)
+- **[STAK Participanten Alkemio Articles of Association (AoA)](/legal/alkemio_participanten_stak/stak_participanten_alkemio_akte_oprichting.pdf)** (Dutch)
+- **[STAK Participanten Alkemio Conditions](/legal/alkemio_participanten_stak/stak_participanten_alkemio_administratievoorwaarden.pdf)** (Dutch)
 
 The key document is probably the Alkemio Holding SHA, which together with the Alkemio Holding AoA ensures that that purpose remains central.
 

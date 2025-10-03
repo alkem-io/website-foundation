@@ -51,7 +51,7 @@ Core features of Steward Ownership, as implemented by Alkemio, include:
 
 The new organizational structure implemented by Alkemio is shown below. All named entities are registered in The Netherlands.
 
-![Alkemio Group Structure]({{< baseurl >}}/images/alkemio-group-structure.svg)
+![Alkemio Group Structure]({{< baseurl >}}/images/alkemio-group-structure_2023.svg)
 
 **Alkemio Holding** is the Steward Ownership entity. It is a commercially and professionally run business to achieve the purpose. The value generated is distributed in accordance with the principles of Steward Ownership and the purpose.
 
@@ -105,7 +105,7 @@ Alkemio has invested significant time, money, and energy into the above structur
 
 We believe this structure has the potential to benefit many other ventures looking to make positive contributions to society, so we are sharing our documents and please also reach out if you would like to learn more from our journey so far!
 
-**[Purpose Foundation case study on Alkemio]({{< baseurl >}}/case_studies/purpose-alkemio-casestudyen-31032024.pdf)**: In addition to our materials which are shared below, Alkemio is also proud to be featured as a case study from [Purpose Economy](https://purpose-economy.org/en/), the leading champion for Steward Ownership.
+**[Purpose Foundation case study on Alkemio](/case_studies/purpose-alkemio-casestudyen-31032024.pdf)**: In addition to our materials which are shared below, Alkemio is also proud to be featured as a case study from [Purpose Economy](https://purpose-economy.org/en/), the leading champion for Steward Ownership.
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
@@ -123,12 +123,12 @@ Alkemio would be delighted and honored if other parties would be able to learn f
 
 #### Key documents
 
-- **[Stichting Alkemio Articles of Association (AoA)]({{< baseurl >}}/legal/stichting_alkemio/stichting_alkemio_statuten_2021_12.pdf)** (Dutch)
-- **[Alkemio Holding Articles of Association (AoA)]({{< baseurl >}}/legal/alkemio_holding/alkemio_holding_statuten.pdf)** (Dutch)
-- **[Alkemio Holding Issuance of share PC + shares CC]({{< baseurl >}}/legal/alkemio_holding/alkemio_holding_uitgifte_aandelen_pc_cc.pdf)** (Dutch)
-- **[Alkemio Holding Shareholders Agreement (SHA)]({{< baseurl >}}/legal/alkemio_holding/alkemio_holding_shareholders_agreement_v1.1.pdf)** (English)
-- **[STAK Participanten Alkemio Articles of Association (AoA)]({{< baseurl >}}/legal/alkemio_participanten_stak/stak_participanten_alkemio_akte_oprichting.pdf)** (Dutch)
-- **[STAK Participanten Alkemio Conditions]({{< baseurl >}}/legal/alkemio_participanten_stak/stak_participanten_alkemio_administratievoorwaarden.pdf)** (Dutch)
+- **[Stichting Alkemio Articles of Association (AoA)](/legal/stichting_alkemio/stichting_alkemio_statuten_2021_12.pdf)** (Dutch)
+- **[Alkemio Holding Articles of Association (AoA)](/legal/alkemio_holding/alkemio_holding_statuten.pdf)** (Dutch)
+- **[Alkemio Holding Issuance of share PC + shares CC](/legal/alkemio_holding/alkemio_holding_uitgifte_aandelen_pc_cc.pdf)** (Dutch)
+- **[Alkemio Holding Shareholders Agreement (SHA)](/legal/alkemio_holding/alkemio_holding_shareholders_agreement_v1.1.pdf)** (English)
+- **[STAK Participanten Alkemio Articles of Association (AoA)](/legal/alkemio_participanten_stak/stak_participanten_alkemio_akte_oprichting.pdf)** (Dutch)
+- **[STAK Participanten Alkemio Conditions](/legal/alkemio_participanten_stak/stak_participanten_alkemio_administratievoorwaarden.pdf)** (Dutch)
 
 The key document is probably the Alkemio Holding SHA, which together with the Alkemio Holding AoA ensures that that purpose remains central.
 
