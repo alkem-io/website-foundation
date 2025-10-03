@@ -67,6 +67,8 @@ The key entities in this diagram and their roles are:
 
 #### Alkemio Holding BV share structure
 
+<div style="overflow-x: auto; overflow-y: visible;">
+
 | Share class         | Abbreviation | Purpose                                         | Control | Economic | Held by                    |
 |---------------------|--------------|-------------------------------------------------|---------|----------|----------------------------|
 | Steward Control     | SC           | Primary voting control                          | Y       | N        | Stichting Alkemio           |
@@ -74,6 +76,8 @@ The key entities in this diagram and their roles are:
 | Contributor Capital | CC           | Economic participation for contributors of capital. Capped. | N | Y | STAK Participanten Alkemio |
 | Contributor Time    | CT           | Economic participation for contributors of time. Capped. | N | Y | STAK Participanten Alkemio |
 | Steward Economic    | SE           | Economic value to be allocated in line with the purpose. Not capped. | N | Y | Stichting Alkemio |
+
+</div>
 
 </details>
 
@@ -115,7 +119,7 @@ Our observation is that it is simply too much work to put purpose before profit.
 Alkemio would be delighted and honored if other parties would be able to learn from this setup, and potentially leverage it for their ventures.
 
 **Special mentions to the following external parties that have helped Alkemio on our journey so far:**
-- Gijsbert Koren, WeAreStewards, for guidance on our path
+- Gijsbert Koren, We Are Stewards, for guidance on our path
 - Maurits Bos, Ben Valor, for legal advice and feedback for a robust framework
 - Jennifer Benson, Stichting de Prioriteit, for validating our implementation
 - Inge van Pelt, Juli Notaris, for implementing the legal setup

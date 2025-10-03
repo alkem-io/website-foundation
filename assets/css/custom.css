@@ -22,3 +22,36 @@
   margin-top: auto;
 }
 
+/* Fixing an issue with table collapse and cut-off*/
+.content table {
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+}
+
+.content table::before {
+  overflow: visible !important;
+  max-height: none !important;
+  height: 100% !important;
+}
+
+.prose table,
+.content .prose table {
+  overflow: visible !important;
+}
+
+
+.content table tbody {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+
+details[open] {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+details[open] > * {
+  max-height: none !important;
+}

@@ -75,13 +75,17 @@ It is important to highlight that neither Alkemio nor any of the key stakeholder
 
 #### Alkemio Holding BV share structure
 
+<div style="overflow-x: auto; overflow-y: visible;">
+
 | Share class         | Abbreviation | Purpose                                         | Control | Economic | Held by                    |
 |---------------------|--------------|-------------------------------------------------|---------|----------|----------------------------|
 | Steward Control     | SC           | Primary voting control                          | Y       | N        | Stichting Alkemio           |
-| Purpose Control     | PC           | Independent guarantee on the purpose            | Y       | N        | Stichting de Prioriteit     |
-| Contributor Capital | CC           | Economic participation for contributors of capital. Capped. | N | Y | STAK Participanten Alkemio |
-| Contributor Time    | CT           | Economic participation for contributors of time. Capped. | N | Y | STAK Participanten Alkemio |
-| Steward Economic    | SE           | Economic value to be allocated in line with the purpose. Not capped. | N | Y | Stichting Alkemio |
+| Purpose Control     | PC           | Independent guarantee on the purpose            | Y       | N        | Stichting Golden Share     |
+| Contributor Capital | CC           | Economic participation for contributors of capital. Capped. | N        | Y       | STAK Participanten Alkemio |
+| Contributor Time    | CT           | Economic participation for contributors of time. Capped. | N        | Y       | STAK Participanten Alkemio |
+| Steward Economic    | SE           | Economic value to be allocated in line with the purpose. Not capped. | N        | Y       | Stichting Alkemio |
+
+</div>
 
 </details>
 
@@ -93,11 +97,9 @@ This is important for protecting the mission as the value of Alkemio increases. 
 
 It is simply a *much stronger* guarantee than relying on the governance of a Foundation.
 
-One key point to highlight is that Stichting Golden Share has a formal process called the **Guardian Check** that must be passed *before* they accept ownership of the veto rights. This is a detailed review of all legal documents, verifying that the key principles of steward-ownership are locked in - and includes both a review by Stichting Golden Share as well as an independent legal review. 
+One key point to highlight is that Stichting Golden Share has a formal process called the **Guardian Check** that must be passed *before* they accept ownership of the veto rights. This is a detailed review of all legal documents, verifying that the key principles of steward-ownership are locked in, and includes both a review by Stichting Golden Share as well as an independent legal review. 
 
-In our case this process took approximately 3 months to go through - a non-trivial investment of time and effort from all parties that provides a strong foundation for trust in the the legal setup.
-
-council of organizations that they in turn need to consult for certain decisions - providing a truly deep and extended social graph to guarantee the purpose!
+In our case this process took approximately 3 months to go through - a non-trivial investment of time and effort from all parties that provides a strong foundation for trust in the the legal setup. 
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
@@ -109,7 +111,7 @@ For all stakeholders of Alkemio, this double lock is important:
 - partners that wish to support the vision
 - customers that want to have confidence in the long-term roadmap for the platform
 
-In addition to the board of Stichting Golden Share needing to approve certain decisions, there is also a 
+In addition to the board of Stichting Golden Share needing to approve certain decisions, there is also a council of organizations that they in turn need to consult for certain decisions - providing a truly deep and extended social graph to guarantee the purpose!
 
 </details>
 
@@ -129,7 +131,7 @@ Our observation is that it is simply too much work to put purpose before profit.
 Alkemio would be delighted and honored if other parties would be able to learn from this setup, and potentially leverage it for their ventures.
 
 **Special mentions to the following external parties that have helped Alkemio on our journey so far:**
-- Gijsbert Koren, WeAreStewards, for guidance on our path
+- Gijsbert Koren, We Are Stewards, for guidance on our path
 - Maurits Bos, Ben Valor, for legal advice and feedback for a robust framework
 - Inge van Pelt, Juli Notaris, for implementing the legal setup
 - Purpose Foundation, for promoting and inspiring the whole topic Steward Ownership!

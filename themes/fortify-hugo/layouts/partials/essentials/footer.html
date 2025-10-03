@@ -2,10 +2,10 @@
   <div class="container" data-aos="fade-up-sm">
     <div class="row gy-3 justify-between lg:g-2 items-start"> <!-- Reduced gutter and align items to start -->
       <!-- Left Column: Quick Links with Social Media Icons beside each link, and Logo at the bottom -->
-      <div class="sm:col-6 md:col-6 lg:col-6 lg:pe-8 flex flex-col h-full"> <!-- Reduced padding-end -->
+      <div class="sm:col-6 md:col-6 lg:col-6 lg:pe-4 flex flex-col h-full"> <!-- Always half width -->
         <div class="w-full flex-1 flex flex-col justify-between"> <!-- Remove extra grow, use justify-between for compactness -->
           <!-- Two sub-columns: Quick Links (left 60%), Social Media Icons (right 40%) aligned by row -->
-          <div class="flex flex-row w-full mb-6"> <!-- Sub-columns container -->
+          <div class="flex flex-col sm:flex-row w-full gap-4 sm:gap-0"> <!-- Stack on small mobile, row on larger -->
             <ul class="flex flex-col gap-3 items-start w-full" style="flex-basis:60%;max-width:60%;flex-grow:1;"> <!-- Quick links left sub-column -->
               {{ range site.Menus.footer_01 }}
                 <li class="min-h-[2.5rem] flex items-center">
@@ -16,11 +16,8 @@
                   >{{ .Name }}</a>
                 </li>
               {{ end }}
-              <div class="mt-8 flex flex-col items-start"> <!-- Logo at bottom of quick links sub-column -->
-                <img src="/images/alkemio-foundation-logo.svg" alt="Alkemio Foundation Logo" class="h-12"> 
-              </div>
             </ul>
-            <ul class="flex flex-col gap-3 items-start flex-shrink-0 ml-10" style="flex-basis:55%;max-width:55%;min-width:260px;"> <!-- Social icons right sub-column, wider to fit text -->
+            <ul class="flex flex-col gap-3 items-start flex-shrink-0 ml-0 sm:ml-4 lg:ml-10" style="flex-basis:55%;max-width:55%;min-width:200px;"> <!-- Social icons right sub-column, responsive spacing -->
               {{ $labels := slice "Follow us on LinkedIn" "Contribute on GitHub" "Get updates on Bluesky" }}
               {{ with .Site.Params.social }}
                 {{ range $i, $icon := . }}
@@ -36,11 +33,17 @@
                   </li>
                 {{ end }}
               {{ end }}
-              <div class="mt-8 flex flex-col items-start"> 
-                <p class="mt-2 text-sm text-text-dark whitespace-nowrap" style="white-space:nowrap;">{{ .Site.Params.address }}</p>
-                <p class="mt-1 text-sm text-text-dark whitespace-nowrap" style="white-space:nowrap;">{{ .Site.Params.copyright }}</p>
-              </div>
             </ul>
+          </div>
+          <!-- Bottom row: Logo on left, Address and Copyright on right -->
+          <div class="flex flex-col sm:flex-row w-full mt-8 gap-4 sm:gap-0"> <!-- Align items to bottom -->
+            <div class="flex flex-col items-start justify-end" style="flex-basis:60%;max-width:60%;flex-grow:1;"> <!-- Logo left aligned with quick links, justified to bottom -->
+              <img src="/images/alkemio-foundation-logo.svg" alt="Alkemio Foundation Logo" class="h-12"> 
+            </div>
+            <div class="flex flex-col items-start justify-end ml-0 sm:ml-4 lg:ml-10" style="flex-basis:55%;max-width:55%;min-width:200px;"> <!-- Address/copyright right aligned with social icons, justified to bottom -->
+              <p class="text-sm text-text-dark break-words max-w-full">{{ .Site.Params.address }}</p>
+              <p class="mt-1 text-sm text-text-dark break-words max-w-full">{{ .Site.Params.copyright }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -73,7 +76,7 @@
       </div> -->
 
       <!-- Right Column: Contact Form -->
-      <div class="sm:col-6 md:col-6 lg:col-6 flex items-start pt-[10px]"> 
+      <div class="sm:col-6 md:col-6 lg:col-6 flex items-start pt-0 lg:pt-[10px]"> <!-- Always half width -->
         <div class="rounded-2xl bg-light p-3 md:p-4 flex justify-center w-full">
           <div class="w-full max-w-s">
             <!-- <div class="mb-2 flex items-center min-h-[2.5rem]" style="height:2.5rem;line-height:2.5rem;">-->
