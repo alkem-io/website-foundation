@@ -33,7 +33,7 @@ The drivers for Alkemio were:
 - Ability to raise capital
 - Ability to attract top talent
 
-We knew we had found the solution when we heard about **Steward Ownership**, which we implemented in early 2023.
+We knew we had found the solution when we heard about **Steward Ownership**, which we implemented in Q1 2023.
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
@@ -49,23 +49,20 @@ Core features of Steward Ownership, as implemented by Alkemio, include:
 
 ### How Alkemio is set up
 
-The new organizational structure implemented by Alkemio is shown below. All named entities are registered in The Netherlands.
+The organizational structure implemented by Alkemio is shown below. All named entities are registered in The Netherlands.
 
 ![Alkemio Group Structure](/legal/alkemio-group-structure-2025.svg)
 
-**Alkemio Holding** is the Steward Ownership entity. It is a commercially and professionally run business to achieve the purpose. The value generated is distributed in accordance with the principles of Steward Ownership and the purpose.
+**Alkemio Holding** is the Steward Ownership entity, bringing together all the stakeholders. It is a commercially and professionally run business to achieve the purpose. The value generated is distributed in accordance with the principles of Steward Ownership and the purpose. It is a holding company, raising capital, receiving and distributing profits, holding assets (IP), etc.
 
-**Stichting Alkemio** is the operational governance for Alkemio Holding. The board of Stichting Alkemio are the stewards.
+**Stichting Alkemio** is a foundation which governs Alkemio Holding. The board of Stichting Alkemio are the stewards of Alkemio Holding.
 
-**Stichting Golden Share** is an independent foundation whose purpose is to provide a veto service for steward-owned companies. It is the holder of the Purpose Control (PC) share. There are provisions in the legal documents that state that approval is required from the PC holder. 
+**Stichting Golden Share** is an independent foundation whose purpose is to provide a veto service for steward-owned companies. It is the holder of the Purpose Control (PC) share. The consent of the PC holder is required for certain provisions in the legal documents of the Alkemio entities, including a change of the purpose. 
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
 
-The details of all entities in this diagram and their roles are:
-- **Alkemio Holding BV**: the central entity, bringing together all the stakeholders. It is a holding company, raising capital, receiving and distributing profits, holding assets (IP), etc.
-- **Stichting Alkemio**: the original entity, whose role evolves to being the "steward" for Alkemio Holding. The board of Stichting Alkemio are the stewards.
-- **Stichting Golden Share**: an independent foundation whose purpose is to hold "golden shares" in steward ownership ventures. It is obliged to act according to the principle of steward ownership.
+The details of the other entities in this diagram and the Alkemio group:
 - **Operating companies**: there are currently two operating entities: 
   - *Alkemio BV*, based in The Netherlands (The Hague) providing the Alkemio platform and services to the market. It is 100% owned by Alkemio Holding BV. 
   - *Alkemio Bulgaria EDPK*, based in Bulgaria providing services for the development and operational management of the platform. It is 100% owned by Alkemio BV.
@@ -95,7 +92,7 @@ The adoption of Steward Ownership can be seen as a **double lock** on the purpos
 
 This is important for protecting the mission as the value of Alkemio increases. Essentially putting in extremely strong locks now to prevent any temptation in the future - for both the stewards as well as all those contributing to the mission (investors, staff, partners).
 
-It is simply a *much stronger* guarantee than relying on the governance of a Foundation.
+It is a *much stronger* guarantee than relying on the governance of a Foundation.
 
 One key point to highlight is that Stichting Golden Share has a formal process called the **Guardian Check** that must be passed *before* they accept ownership of the veto rights. This is a detailed review of all legal documents, verifying that the key principles of steward-ownership are locked in, and includes both a review by Stichting Golden Share as well as an independent legal review. 
 
@@ -158,12 +155,13 @@ Alkemio is making great progress, in terms of both organization structure and ma
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
 
-#### Roadmap near term 
+#### Phases so far
 
 The implementation of steward-ownership for Alkemio has been in two phases:
 - **2023 Q1**: establishing of Alkemio Holding, Alkemio BV and with Stichting de Prioriteit as the PC holder. This involved transferring of the operations from Stichting Alkemio to Alkemio BV - and allowed Alkemio to raise our first external funding. Details of this phase of our journey is [available here](../structure_2023/). 
 - **2025 Q3**: strengthening of the steward-ownership setup. This put in place an explicit Steward Regulations document together with new articles for Stichting Alkemio to define 5 steward positions with requirements. It also involved moving the PC holder from Stichting de Prioriteit to Stichting Golden Share. The reason for this change was that Stichting de Prioriteit is stopping the guardian role, and also as there is a stronger set of enterprises for which Stichting Golden Share guarantees the purpose - which in turn means a stronger purpose guarantee for Alkemio! Finally this set of updates also created additional CC certificates and CT certificates for fund raising and staff participation respectively.
 
+#### Next steps
 The status as of Q4 2025 is that the above group structure is in place, and the shares of Alkemio Holding have been issued. The second phase was something we knew we would need to do already in 2023, as steward-ownership is a journey whose implementation does evolve as the venture evolves. 
 
 This is a critical milestone as it allows Alkemio to raise the funding required to scale.
@@ -171,7 +169,7 @@ This is a critical milestone as it allows Alkemio to raise the funding required 
 However, there is still work to be done:
 - **Stichting Alkemio governance**: The board members of Stichting Alkemio are the stewards of Alkemio Holding BV. There are positions defined for 5 stewards, of which two are currently in place: Neil Smyth and René Honig. The next step is to fill the additional steward roles. Please see the details of the Steward Regulations document for the requirements for the additional stewards. 
 - **Staff proposition**: Alkemio has created a "Contributors Time Stock Option Plan" (CTSOP) that allows for contributors to participate in the value generated by Alkemio. As with investors, this value sharing is capped. It is about putting in place an internationally applicable proposition so that top talent can contribute from anywhere in the world.
-- **Dependence on key players**: There is too strong a dependence on key individuals (Neil Smyth and René Honig) in the above structure. This is not desirable for the long term health of the venture, and it also results in some overlap of control/economic interest.
+- **Dependence on key players**: There is too strong a dependence on key individuals (Neil Smyth and René Honig) in the above structure. This is not desirable for the long term health of the venture, and it also results in some overlap of control/economic interest. This dependence is being reduced by expanding the stewards from 2 to 5. 
 
 All of the above points are on the organizational roadmap and will be addressed. It is important to recognise that Alkemio is still early in its journey and there is only a limited amount of capacity available to develop the organization, build the platform and grow the community. Alkemio is well underway and has achieved a lot, but it is not a given that the venture will succeed - and as such the priority has been to get a scalable and long term structure in place. This is driven by the near term priority to be in a position to raise funds to accelerate the journey and secure Alkemio’s future.
 
@@ -183,8 +181,3 @@ These excess profits will be for the benefit of the holder of the SE share (curr
 
 </details> 
 
-## Disclaimer
-
-The above information is shared in the interest of accelerating the wider move to a purpose-based economy. The information provided here is for general informational purposes only and should not be considered as investment or business advice.
-
-Any investment or business decisions made based on this information are at your own risk.
