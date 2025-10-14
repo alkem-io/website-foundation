@@ -1,0 +1,21 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:security@alkem.io
+Expires: 2025-12-12T12:00:00.000Z
+Encryption: dns:8478f306ae42c922db9cb6de4275f915866af55e._openpgpkey.alkem.io?type=TXT
+Preferred-Languages: en, nl
+Canonical: https://alkem.io/.well-known/security.txt
+Canonical: https://www.alkem.io/.well-known/security.txt
+Canonical: https://alkemio.org/.well-known/security.txt
+Canonical: https://www.alkemio.org/.well-known/security.txt
+Canonical: https://alkemio.foundation/.well-known/security.txt
+Canonical: https://www.alkemio.foundation/.well-known/security.txt
+Policy: https://github.com/alkem-io/alkemio/security/policy
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQSEePMGrkLJItuctt5CdfkVhmr1XgUCZH8YUwAKCRBCdfkVhmr1
+Xlm1AP9/5uc6tAP3Nww2CiMrYJHgNbeL84uNqbohZXePtb/mLAD/eOQmzH4wnqqD
+PoKOI2yseE09eXBSEOQOExDaHjKa8w0=
+=3fCj
+-----END PGP SIGNATURE-----
