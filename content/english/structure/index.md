@@ -42,7 +42,7 @@ Steward Ownership is a legal structure for companies that places purpose first a
 
 Core features of Steward Ownership, as implemented by Alkemio, include:
 - **Leadership**: "Stewards" guide the venture and are chosen based on capability and alignment with the purpose. The best people to achieve the vision.
-- **Independent guarantee**: Providing an independent party with blocking rights, to ensure purpose remains central. Approval is required for changing ownership, changing the group structure, modifying the purpose, extracting value not in line with the purpose, excessive remuneration of staff, etc. Full details can be seen in the Alkemio Holding B.V. SHA linked to below.
+- **Guardian guarantee**: Providing an independent party with blocking rights, to ensure purpose remains central. Approval is required for changing ownership, changing the group structure, modifying the purpose, extracting value not in line with the purpose, excessive remuneration of staff, etc. Full details can be seen in the Alkemio Holding B.V. Shareholders Agreement and Stewards Regulations linked to below.
 - **Capped economic returns without control**: Providing economic returns to both investors and talent, without offering voting control, while also ensuring that ultimately the value generated goes towards the purpose of Alkemio to benefit society.
 
 </details>
@@ -55,9 +55,9 @@ The organizational structure implemented by Alkemio is shown below. All named en
 
 **Alkemio Holding** is the Steward Ownership entity, bringing together all the stakeholders. It is a commercially and professionally run business to achieve the purpose. The value generated is distributed in accordance with the principles of Steward Ownership and the purpose. It is a holding company, raising capital, receiving and distributing profits, holding assets (IP), etc.
 
-**Stichting Alkemio** is a foundation which governs Alkemio Holding. The board of Stichting Alkemio are the stewards of Alkemio Holding.
+**Stichting Alkemio** is the foundation which governs Alkemio Holding. The board of Stichting Alkemio are the stewards of Alkemio Holding.
 
-**Stichting Golden Share** is an independent foundation whose purpose is to provide a veto service for steward-owned companies. It is the holder of the Purpose Control (PC) share. The consent of the PC holder is required for certain provisions in the legal documents of the Alkemio entities, including a change of the purpose. 
+**Stichting Golden Share** is the guardian foundation. It is an independent foundation whose purpose is to provide a guardian service for steward-owned companies. It is the holder of the Purpose Control (PC) share. The consent of the PC holder is required for certain provisions in the legal documents of the Alkemio entities, including a change of the purpose. 
 
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
@@ -77,7 +77,7 @@ It is important to highlight that neither Alkemio nor any of the key stakeholder
 | Share class         | Abbreviation | Purpose                                         | Control | Economic | Held by                    |
 |---------------------|--------------|-------------------------------------------------|---------|----------|----------------------------|
 | Steward Control     | SC           | Primary voting control                          | Y       | N        | Stichting Alkemio           |
-| Purpose Control     | PC           | Independent guarantee on the purpose            | Y       | N        | Stichting Golden Share     |
+| Purpose Control     | PC           | Independent guardian control on the purpose            | Y       | N        | Stichting Golden Share     |
 | Contributor Capital | CC           | Economic participation for contributors of capital. Capped. | N        | Y       | STAK Participanten Alkemio |
 | Contributor Time    | CT           | Economic participation for contributors of time. Capped. | N        | Y       | STAK Participanten Alkemio |
 | Steward Economic    | SE           | Economic value to be allocated in line with the purpose. Not capped. | N        | Y       | Stichting Alkemio |
@@ -101,14 +101,14 @@ In our case this process took approximately 3 months to go through - a non-trivi
 <details>
 <summary data-open="Close" data-close="Read more..."></summary>
 
-The Purpose Control (PC) share is held by Stichting Golden Share. This entity, established also in The Netherlands, has the purpose to act as an independent party to guarantee principles of steward ownership are followed in such ventures.
+The Purpose Control (PC) share is held by Stichting Golden Share. This independent entity, established also in The Netherlands, has the purpose to be the guardian that the principles of steward ownership are followed in such ventures.
 
 For all stakeholders of Alkemio, this double lock is important:
 - investors/contributors who have an economic interest but no voting rights
 - partners that wish to support the vision
 - customers that want to have confidence in the long-term roadmap for the platform
 
-In addition to the board of Stichting Golden Share needing to approve certain decisions, there is also a council of organizations that they in turn need to consult for certain decisions - providing a truly deep and extended social graph to guarantee the purpose!
+And the guardian role is very strong. First due to its independence. Second as there is a "council of entrepreneurs" that are representatives of steward owned companies where the guardian role is fulfilled by Stichting Golden Share. For some decisions, in addition to the board of Stichting Golden Share, the council of entrepreneurs also need to provide approval.  Thus providing a truly deep and extended social graph to guarantee the purpose!
 
 </details>
 
