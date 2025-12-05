@@ -1,5 +1,4 @@
 version: STSv1
 mode: enforce
-mx: alkem-io.mail.protection.outlook.com
-mx: alkemio-org.mail.protection.outlook.com
+mx: *.mail.protection.outlook.com
 max_age: 86401
