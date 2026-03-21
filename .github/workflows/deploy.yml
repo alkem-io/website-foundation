@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [develop, main]
+    branches: [develop2, main]
 
 concurrency:
   group: deploy-${{ github.ref_name }}
@@ -21,14 +21,16 @@ jobs:
         run: |
           if [ "${{ github.ref_name }}" = "main" ]; then
             echo "HUGO_BASE_URL=https://alkemio.org" >> "$GITHUB_ENV"
-            echo "BUNNY_STORAGE_ZONE=${{ secrets.BUNNY_STORAGE_ZONE_PROD }}" >> "$GITHUB_ENV"
+            echo "HUGO_ENVIRONMENT=production" >> "$GITHUB_ENV"
+            echo "BUNNY_STORAGE_ZONE=${{ vars.BUNNY_STORAGE_ZONE_PROD }}" >> "$GITHUB_ENV"
             echo "BUNNY_STORAGE_API_KEY=${{ secrets.BUNNY_STORAGE_API_KEY_PROD }}" >> "$GITHUB_ENV"
-            echo "BUNNY_PULL_ZONE_ID=${{ secrets.BUNNY_PULL_ZONE_ID_PROD }}" >> "$GITHUB_ENV"
+            echo "BUNNY_PULL_ZONE_ID=${{ vars.BUNNY_PULL_ZONE_ID_PROD }}" >> "$GITHUB_ENV"
           else
             echo "HUGO_BASE_URL=https://draft.alkemio.org" >> "$GITHUB_ENV"
-            echo "BUNNY_STORAGE_ZONE=${{ secrets.BUNNY_STORAGE_ZONE_DRAFT }}" >> "$GITHUB_ENV"
+            echo "HUGO_ENVIRONMENT=draft" >> "$GITHUB_ENV"
+            echo "BUNNY_STORAGE_ZONE=${{ vars.BUNNY_STORAGE_ZONE_DRAFT }}" >> "$GITHUB_ENV"
             echo "BUNNY_STORAGE_API_KEY=${{ secrets.BUNNY_STORAGE_API_KEY_DRAFT }}" >> "$GITHUB_ENV"
-            echo "BUNNY_PULL_ZONE_ID=${{ secrets.BUNNY_PULL_ZONE_ID_DRAFT }}" >> "$GITHUB_ENV"
+            echo "BUNNY_PULL_ZONE_ID=${{ vars.BUNNY_PULL_ZONE_ID_DRAFT }}" >> "$GITHUB_ENV"
           fi
 
       - name: Setup Go
@@ -52,9 +54,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: hugo --gc --minify -b "$HUGO_BASE_URL"
-        env:
-          HUGO_ENV: production
+        run: hugo --gc --minify -b "$HUGO_BASE_URL" --environment "$HUGO_ENVIRONMENT"
 
       - name: Upload to Bunny Storage
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2

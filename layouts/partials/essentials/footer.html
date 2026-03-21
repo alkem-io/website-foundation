@@ -53,7 +53,7 @@
         <div class="rounded-2xl bg-light p-3 md:p-4 flex justify-center w-full">
           <div class="w-full max-w-s">
             <h3 class="mb-2 text-lg font-normal text-text-dark">{{ T "contact_us" }}</h3>
-            <form class="row g-2" name="contact" method="POST" action="https://submit-form.com/2DIOCxGJ5">
+            <form class="row g-2" name="contact" method="POST" action="{{ site.Params.contact_form_action }}">
               <div class="flex flex-row gap-2 w-full mb-2"> <!-- Name and email side by side -->
                 <input id="name" name="name" class="form-input text-sm py-1 w-1/2" placeholder="Your Name" required type="text" />
                 <input id="email" name="email" class="form-input text-sm py-1 w-1/2" placeholder="Your Email" required type="email" />
