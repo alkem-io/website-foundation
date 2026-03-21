@@ -1,0 +1,28 @@
+name: Configure Bunny Edge Rules
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Which pull zones to configure'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - draft
+          - prod
+
+jobs:
+  apply-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply edge rules
+        run: ./scripts/bunny-edge-rules.sh
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
+          BUNNY_PULL_ZONE_ID_DRAFT: ${{ (inputs.target == 'both' || inputs.target == 'draft') && '5528531' || '' }}
+          BUNNY_PULL_ZONE_ID_PROD: ${{ (inputs.target == 'both' || inputs.target == 'prod') && '5528657' || '' }}
