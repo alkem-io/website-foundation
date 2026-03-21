@@ -11,6 +11,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      HUGO_ENV: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,19 +20,20 @@ jobs:
           fetch-depth: 0
 
       - name: Set environment variables
+        id: config
         run: |
           if [ "${{ github.ref_name }}" = "main" ]; then
-            echo "HUGO_BASE_URL=https://alkemio.org" >> "$GITHUB_ENV"
-            echo "HUGO_ENVIRONMENT=production" >> "$GITHUB_ENV"
-            echo "BUNNY_STORAGE_ZONE=${{ vars.BUNNY_STORAGE_ZONE_PROD }}" >> "$GITHUB_ENV"
+            echo "hugo_base_url=https://alkemio.org" >> "$GITHUB_OUTPUT"
+            echo "hugo_environment=production" >> "$GITHUB_OUTPUT"
+            echo "storage_zone=${{ vars.BUNNY_STORAGE_ZONE_PROD }}" >> "$GITHUB_OUTPUT"
+            echo "pull_zone_id=${{ vars.BUNNY_PULL_ZONE_ID_PROD }}" >> "$GITHUB_OUTPUT"
             echo "BUNNY_STORAGE_API_KEY=${{ secrets.BUNNY_STORAGE_API_KEY_PROD }}" >> "$GITHUB_ENV"
-            echo "BUNNY_PULL_ZONE_ID=${{ vars.BUNNY_PULL_ZONE_ID_PROD }}" >> "$GITHUB_ENV"
           else
-            echo "HUGO_BASE_URL=https://draft.alkemio.org" >> "$GITHUB_ENV"
-            echo "HUGO_ENVIRONMENT=draft" >> "$GITHUB_ENV"
-            echo "BUNNY_STORAGE_ZONE=${{ vars.BUNNY_STORAGE_ZONE_DRAFT }}" >> "$GITHUB_ENV"
+            echo "hugo_base_url=https://draft.alkemio.org" >> "$GITHUB_OUTPUT"
+            echo "hugo_environment=draft" >> "$GITHUB_OUTPUT"
+            echo "storage_zone=${{ vars.BUNNY_STORAGE_ZONE_DRAFT }}" >> "$GITHUB_OUTPUT"
+            echo "pull_zone_id=${{ vars.BUNNY_PULL_ZONE_ID_DRAFT }}" >> "$GITHUB_OUTPUT"
             echo "BUNNY_STORAGE_API_KEY=${{ secrets.BUNNY_STORAGE_API_KEY_DRAFT }}" >> "$GITHUB_ENV"
-            echo "BUNNY_PULL_ZONE_ID=${{ vars.BUNNY_PULL_ZONE_ID_DRAFT }}" >> "$GITHUB_ENV"
           fi
 
       - name: Setup Go
@@ -54,17 +57,17 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: hugo --gc --minify -b "$HUGO_BASE_URL" --environment "$HUGO_ENVIRONMENT"
+        run: hugo --gc --minify -b "${{ steps.config.outputs.hugo_base_url }}" --environment "${{ steps.config.outputs.hugo_environment }}"
 
       - name: Upload to Bunny Storage
         uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
         with:
           source: public
           destination: /
-          storageZoneName: "${{ env.BUNNY_STORAGE_ZONE }}"
+          storageZoneName: "${{ steps.config.outputs.storage_zone }}"
           storagePassword: "${{ env.BUNNY_STORAGE_API_KEY }}"
           accessKey: "${{ secrets.BUNNY_API_KEY }}"
-          pullZoneId: "${{ env.BUNNY_PULL_ZONE_ID }}"
+          pullZoneId: "${{ steps.config.outputs.pull_zone_id }}"
           upload: "true"
           remove: "true"
           purgePullZone: "true"
