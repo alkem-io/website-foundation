@@ -1,4 +1,4 @@
-module hugoplate.netlify.app
+module alkemio.foundation
 
 go 1.21
 
