@@ -123,9 +123,10 @@
 - [ ] T035 [US2] Verify `curl -I https://alkemio.org/` returns all security headers
 - [ ] T036 [US2] Verify `curl -I https://alkemio.org/post/test` returns 301 redirect
 - [ ] T037 [US3] Submit contact form on `https://alkemio.org`, verify received in formspark.io
-- [ ] T038 [MANUAL] Decommission Netlify site (after DNS fully propagated and verified stable for 48+ hours)
+- [ ] T038 Verify all GitHub Actions workflows in `alkem-io/website-foundation` are green on both `develop` and `main` branches
+- [ ] T039 [MANUAL] Decommission Netlify site (after DNS fully propagated and verified stable for 48+ hours)
 
-**Checkpoint**: Migration complete. Both environments live on Bunny.net. Netlify decommissioned.
+**Checkpoint**: Migration complete. Both environments live on Bunny.net. All CI green. Netlify decommissioned.
 
 ---
 

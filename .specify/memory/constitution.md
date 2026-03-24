@@ -25,8 +25,7 @@ Sync Impact Report
 
 ### III. Configuration Consistency
 
-- Site configuration is centralised in `hugo.toml` at the repository root.
-- Environment-specific overrides use Hugo's configuration directory pattern or build-time environment variables.
+- Site configuration uses `hugo.toml` at the repository root and Hugo's configuration directory pattern (`config/_default/`, `config/draft/`, `config/production/`, etc.) for shared and environment-specific settings.
 - Deployment configuration (`.github/workflows/deploy.yml`) MUST stay in sync with the Hugo build commands and output directory.
 
 ### IV. Asset Pipeline
@@ -45,7 +44,7 @@ Sync Impact Report
 ### VI. Deployment Safety
 
 - The site deploys via GitHub Actions (`.github/workflows/deploy.yml`) to Bunny CDN. A deployment is "working" when: (1) `hugo --gc --minify` exits 0, (2) all files upload to the Bunny Storage Zone, and (3) the Bunny Pull Zone cache purge succeeds.
-- Hugo version used in CI MUST match the version specified in the workflow (`HUGO_VERSION` env var). Local development SHOULD use the same version.
+- Hugo version used in CI MUST match the version pinned in the workflow (`hugo-version` input in `.github/workflows/deploy.yml`). Local development SHOULD use the same version.
 - All changes MUST pass `hugo` locally before pushing. A pre-commit hook or CI check SHOULD enforce this deterministically.
 
 ## Governance
