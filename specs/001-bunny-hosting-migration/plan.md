@@ -26,7 +26,7 @@ Migrate the Alkemio Foundation Hugo website from Netlify to Bunny.net CDN with a
 
 ## Architecture
 
-```
+```text
 ┌─────────────┐     push develop     ┌──────────────────┐     upload      ┌─────────────────────┐
 │   GitHub     │ ──────────────────── │  GitHub Actions   │ ─────────────► │ Bunny Storage Zone  │
 │   Repository │     push main        │  (Hugo build)     │                │ (draft / prod)      │
@@ -48,7 +48,7 @@ Migrate the Alkemio Foundation Hugo website from Netlify to Bunny.net CDN with a
 
 ### Contact form flow
 
-```
+```text
 Browser POST ──► https://submit-form.com/2DIOCxGJ5 ──► submit-form.com dashboard / email
 ```
 

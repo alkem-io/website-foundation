@@ -55,11 +55,11 @@
             <h3 class="mb-2 text-lg font-normal text-text-dark">{{ T "contact_us" }}</h3>
             <form class="row g-2" name="contact" method="POST" action="{{ site.Params.contact_form_action }}">
               <div class="flex flex-row gap-2 w-full mb-2"> <!-- Name and email side by side -->
-                <input id="name" name="name" class="form-input text-sm py-1 w-1/2" placeholder="Your Name" required type="text" />
-                <input id="email" name="email" class="form-input text-sm py-1 w-1/2" placeholder="Your Email" required type="email" />
+                <input id="name" name="name" class="form-input text-sm py-1 w-1/2" placeholder="Your Name" aria-label="Your Name" required type="text" />
+                <input id="email" name="email" class="form-input text-sm py-1 w-1/2" placeholder="Your Email" aria-label="Your Email" required type="email" />
               </div>
               <div class="col-12">
-                <textarea id="message" name="message" class="form-input text-sm py-1 w-full" placeholder="Write Your Message Here" required rows="3"></textarea>
+                <textarea id="message" name="message" class="form-input text-sm py-1 w-full" placeholder="Write Your Message Here" aria-label="Your Message" required rows="3"></textarea>
               </div>
               <div class="col-12 flex justify-end mt-3">
                 <button type="submit" class="btn btn-regular px-5 py-2 ml-auto">

@@ -133,7 +133,7 @@
 
 ### Phase Dependencies
 
-```
+```text
 Phase 1 (External Setup)
   └──► Phase 2 (Deploy Workflow)  ── can start in-repo work before Phase 1,
   │                                   but cannot test deploys until zones exist
@@ -156,7 +156,7 @@ Phase 6 (DNS Cutover)             ── depends on ALL previous phases being co
 
 ### Critical Path
 
-```
+```text
 T001–T006 → T007 → T008 → T010–T015 → T031–T032 → T033–T038
                      ↕ (parallel)
               T016–T017 → T018–T020
