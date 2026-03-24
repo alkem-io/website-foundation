@@ -13,6 +13,9 @@ on:
           - draft
           - prod
 
+permissions:
+  contents: read
+
 jobs:
   apply-rules:
     runs-on: ubuntu-latest

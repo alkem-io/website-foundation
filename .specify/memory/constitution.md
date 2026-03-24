@@ -26,7 +26,7 @@ Sync Impact Report
 
 - Site configuration is centralised in `hugo.toml` at the repository root.
 - Environment-specific overrides use Hugo's configuration directory pattern or build-time environment variables.
-- Deployment configuration (`amplify.yml`, `netlify.toml`) MUST stay in sync with the Hugo build commands and output directory.
+- Deployment configuration (`.github/workflows/deploy.yml`) MUST stay in sync with the Hugo build commands and output directory.
 
 ### IV. Asset Pipeline
 
@@ -43,7 +43,7 @@ Sync Impact Report
 
 ### VI. Deployment Safety
 
-- The site deploys via Amplify and/or Netlify. Build commands in `amplify.yml` and `netlify.toml` MUST produce a working site.
+- The site deploys via GitHub Actions to Bunny CDN. The workflow in `.github/workflows/deploy.yml` MUST produce a working site.
 - Hugo version used in CI MUST match the version used for local development.
 - All changes MUST be verified with a local `hugo` build before pushing to avoid broken deployments.
 
@@ -55,7 +55,7 @@ Sync Impact Report
 - **Content**: Markdown with Hugo front matter in `content/english/`
 - **Data**: YAML/TOML/JSON files in `data/`
 - **Build**: `hugo` for production, `hugo server` for local development
-- **Deployment**: AWS Amplify (`amplify.yml`) and Netlify (`netlify.toml`)
+- **Deployment**: GitHub Actions + Bunny CDN (`.github/workflows/deploy.yml`)
 
 ## Governance
 
