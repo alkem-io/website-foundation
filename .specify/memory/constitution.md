@@ -1,7 +1,8 @@
 <!--
 Sync Impact Report
-- Version: 1.0.0
-- Initial ratification
+- Version: 1.1.0
+- 1.1.0: Tightened Deployment Safety with deterministic build check; removed Development Workflow section (moved to CLAUDE.md)
+- 1.0.0: Initial ratification
 - Follow-up TODOs: none
 -->
 
@@ -43,19 +44,9 @@ Sync Impact Report
 
 ### VI. Deployment Safety
 
-- The site deploys via GitHub Actions to Bunny CDN. The workflow in `.github/workflows/deploy.yml` MUST produce a working site.
-- Hugo version used in CI MUST match the version used for local development.
-- All changes MUST be verified with a local `hugo` build before pushing to avoid broken deployments.
-
-## Development Workflow
-
-- **Static site generator**: Hugo (Go-based)
-- **Theme**: fortify-hugo (in `themes/`)
-- **CSS**: TailwindCSS with custom plugin (`tailwind-plugin/`)
-- **Content**: Markdown with Hugo front matter in `content/english/`
-- **Data**: YAML/TOML/JSON files in `data/`
-- **Build**: `hugo` for production, `hugo server` for local development
-- **Deployment**: GitHub Actions + Bunny CDN (`.github/workflows/deploy.yml`)
+- The site deploys via GitHub Actions (`.github/workflows/deploy.yml`) to Bunny CDN. A deployment is "working" when: (1) `hugo --gc --minify` exits 0, (2) all files upload to the Bunny Storage Zone, and (3) the Bunny Pull Zone cache purge succeeds.
+- Hugo version used in CI MUST match the version specified in the workflow (`HUGO_VERSION` env var). Local development SHOULD use the same version.
+- All changes MUST pass `hugo` locally before pushing. A pre-commit hook or CI check SHOULD enforce this deterministically.
 
 ## Governance
 
@@ -66,4 +57,4 @@ Sync Impact Report
   2. A version bump following semantic versioning (MAJOR for principle removals/redefinitions, MINOR for additions, PATCH for clarifications).
   3. An updated Sync Impact Report (HTML comment at top of this file).
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-20
+**Version**: 1.1.0 | **Ratified**: 2026-03-20 | **Updated**: 2026-03-24
