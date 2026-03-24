@@ -27,6 +27,8 @@ if [ ${#ZONE_IDS[@]} -eq 0 ]; then
   exit 1
 fi
 
+FAILURES=0
+
 add_edge_rule() {
   local zone_id="$1"
   local payload="$2"
@@ -46,6 +48,7 @@ add_edge_rule() {
     echo "    OK (${http_code})"
   else
     echo "    FAILED (${http_code}): ${body}" >&2
+    FAILURES=$((FAILURES + 1))
   fi
 }
 
@@ -160,4 +163,8 @@ for zone_id in "${ZONE_IDS[@]}"; do
 done
 
 echo ""
+if [ "$FAILURES" -gt 0 ]; then
+  echo "ERROR: ${FAILURES} rule(s) failed to apply. Check errors above." >&2
+  exit 1
+fi
 echo "All rules applied. Verify in Bunny dashboard: CDN → Pull Zone → Edge Rules"
