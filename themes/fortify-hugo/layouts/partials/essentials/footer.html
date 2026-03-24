@@ -49,45 +49,11 @@
       </div>
 
       <!-- Right Column: Contact Form -->
-      <!-- <div class="sm:col-6 md:col-6 lg:col-6">
-        <div class="rounded-2xl bg-light p-3 md:p-4"> 
-          <h3 class="mb-2 text-lg font-normal text-text-dark">{{ T "contact_us" }}</h3> 
-          <form class="row g-2" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"> 
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-          </p>
-            <div class="col-12">
-              <input id="name" name="name" class="form-input w-full text-sm py-1.5" placeholder="Your Name" required type="text" /> 
-            </div>
-            <div class="col-12">
-              <input id="email" name="email" class="form-input w-full text-sm py-1.5" placeholder="Your Email" required type="email" /> 
-            </div>
-            <div class="col-12">
-              <textarea id="message" name="message" class="form-input w-full text-sm py-1.5" placeholder="Write Your Message Here" required rows="2"></textarea> 
-            </div>
-            <div class="col-12 flex justify-end">
-              <button type="submit" class="btn btn-regular px-5 py-2"> 
-                {{ T "send_message" }}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div> -->
-
-      <!-- Right Column: Contact Form -->
       <div class="sm:col-6 md:col-6 lg:col-6 flex items-start pt-0 lg:pt-[10px]"> <!-- Always half width -->
         <div class="rounded-2xl bg-light p-3 md:p-4 flex justify-center w-full">
           <div class="w-full max-w-s">
-            <!-- <div class="mb-2 flex items-center min-h-[2.5rem]" style="height:2.5rem;line-height:2.5rem;">-->
-            <!-- <h2 class="font-medium text-lg m-0 p-0 flex items-center" style="line-height:2.5rem;">We would love to hear from you! </h2>-->
-            <!-- </div> -->
             <h3 class="mb-2 text-lg font-normal text-text-dark">{{ T "contact_us" }}</h3>
-            <form class="row g-2" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="hidden">
-                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-              </p>
+            <form class="row g-2" name="contact" method="POST" action="{{ site.Params.contact_form_action }}">
               <div class="flex flex-row gap-2 w-full mb-2"> <!-- Name and email side by side -->
                 <input id="name" name="name" class="form-input text-sm py-1 w-1/2" placeholder="Your Name" required type="text" />
                 <input id="email" name="email" class="form-input text-sm py-1 w-1/2" placeholder="Your Email" required type="email" />

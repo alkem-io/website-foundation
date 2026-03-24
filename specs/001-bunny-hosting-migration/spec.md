@@ -60,18 +60,18 @@ The migrated site serves the same security headers (CSP, X-Frame-Options, etc.) 
 
 ### User Story 3 — Contact Form Migration (Priority: P1)
 
-The footer contact form currently uses Netlify Forms (`data-netlify="true"`), which will stop working once Netlify is removed. The form must be migrated to submit-form.com (`https://submit-form.com/2DIOCxGJ5`). The contact page hero form (currently non-functional, action `#`) should also be pointed at the same endpoint.
+The footer contact form currently uses Netlify Forms (`data-netlify="true"`), which will stop working once Netlify is removed. The form must be migrated to formspark.io (`https://formspark.io/2DIOCxGJ5`). The contact page hero form (currently non-functional, action `#`) should also be pointed at the same endpoint.
 
 **Why this priority**: Without this, the contact form silently breaks on day one of the migration. Users cannot reach the team.
 
-**Independent Test**: Submit the footer contact form on `draft.alkemio.org`, verify the submission arrives in the submit-form.com dashboard.
+**Independent Test**: Submit the footer contact form on `draft.alkemio.org`, verify the submission arrives in the formspark.io dashboard.
 
 **Acceptance Scenarios**:
 
-1. **Given** the footer form is rendered, **When** inspecting the HTML, **Then** the form action is `https://submit-form.com/2DIOCxGJ5`, the method is POST, and all Netlify-specific attributes (`data-netlify`, `netlify-honeypot`, hidden `form-name` input) are removed.
-2. **Given** a user fills in name, email, and message and clicks send, **When** the form submits, **Then** the submission is received by submit-form.com and the user sees a confirmation.
-3. **Given** the contact page hero form exists, **When** inspecting its HTML, **Then** its action is also `https://submit-form.com/2DIOCxGJ5` (via the `contact_form_action` param in `params.toml`).
-4. **Given** the CSP is configured, **When** inspecting the `form-action` directive, **Then** it includes `https://submit-form.com` alongside `'self'`.
+1. **Given** the footer form is rendered, **When** inspecting the HTML, **Then** the form action is `https://formspark.io/2DIOCxGJ5`, the method is POST, and all Netlify-specific attributes (`data-netlify`, `netlify-honeypot`, hidden `form-name` input) are removed.
+2. **Given** a user fills in name, email, and message and clicks send, **When** the form submits, **Then** the submission is received by formspark.io and the user sees a confirmation.
+3. **Given** the contact page hero form exists, **When** inspecting its HTML, **Then** its action is also `https://formspark.io/2DIOCxGJ5` (via the `contact_form_action` param in `params.toml`).
+4. **Given** the CSP is configured, **When** inspecting the `form-action` directive, **Then** it includes `https://formspark.io` alongside `'self'`.
 
 ---
 
@@ -97,7 +97,7 @@ All Netlify and Amplify configuration is removed from the repository so there is
 - **Concurrent deploys**: If two commits push in quick succession, the second workflow run should either queue or supersede the first — not produce a partial deploy.
 - **Cache purge failure**: If the Bunny cache purge API call fails after a successful upload, the old content remains cached. The workflow should retry the purge or flag the failure prominently.
 - **DNS propagation**: During the cutover window, some visitors may still hit Netlify while others hit Bunny. Content should be deployed to Bunny before the DNS change.
-- **Branch name mismatch**: The current Netlify config builds from any branch. The GitHub Actions workflow must be scoped to the correct branches (`develop` for production, PRs for preview).
+- **Branch name mismatch**: The current Netlify config builds from any branch. The GitHub Actions workflow must be scoped to the correct branches (`develop` for draft, `main` for production).
 
 ## Requirements
 
@@ -111,11 +111,11 @@ All Netlify and Amplify configuration is removed from the repository so there is
 - **FR-006**: Security headers (X-Frame-Options, X-XSS-Protection, X-Content-Type-Options, Content-Security-Policy, Report-To) MUST be served on all responses from both environments.
 - **FR-007**: The redirect `/post/* → /blog/*` MUST return HTTP 301.
 - **FR-008**: The CSP MUST NOT reference Netlify domains (`netlify.com`, `netlify.app`, `netlifystatus.com`).
-- **FR-009**: The CSP `form-action` directive MUST allow `https://submit-form.com` in addition to `'self'`.
+- **FR-009**: The CSP `form-action` directive MUST allow `https://formspark.io` in addition to `'self'`.
 - **FR-010**: `netlify.toml`, `static/_redirects`, and `amplify.yml` MUST be removed from the repository.
 - **FR-011**: The `go.mod` module path MUST be updated to remove the `netlify.app` reference.
-- **FR-012**: The footer contact form MUST submit to `https://submit-form.com/2DIOCxGJ5` via standard POST. All Netlify Forms attributes (`data-netlify`, `netlify-honeypot`, hidden `form-name` input) MUST be removed.
-- **FR-013**: The `contact_form_action` parameter in `params.toml` MUST be set to `https://submit-form.com/2DIOCxGJ5`.
+- **FR-012**: The footer contact form MUST submit to `https://formspark.io/2DIOCxGJ5` via standard POST. All Netlify Forms attributes (`data-netlify`, `netlify-honeypot`, hidden `form-name` input) MUST be removed.
+- **FR-013**: The `contact_form_action` parameter in `params.toml` MUST be set per environment: `https://formspark.io/2DIOCxGJ5` in `config/_default/params.toml` and `config/production/params.toml`, and `https://formspark.io/XxoAI8RE2` in `config/draft/params.toml`.
 - **FR-014**: GitHub repository secrets MUST be used for all Bunny API keys — no secrets in committed files.
 - **FR-015**: The workflow MUST use `concurrency` groups to prevent overlapping deploys to the same target.
 
@@ -125,7 +125,7 @@ All Netlify and Amplify configuration is removed from the repository so there is
 - **Bunny Pull Zones**: Two CDN distributions, each serving one storage zone. Custom domains pointed via DNS CNAME.
 - **Bunny Edge Rules**: Configuration on each pull zone to handle redirects and inject security headers.
 - **GitHub Actions Secrets**: Per-environment secrets: `BUNNY_API_KEY` (account-level, for cache purge), `BUNNY_STORAGE_API_KEY_DRAFT` / `BUNNY_STORAGE_API_KEY_PROD`, `BUNNY_STORAGE_ZONE_DRAFT` / `BUNNY_STORAGE_ZONE_PROD`, `BUNNY_PULL_ZONE_ID_DRAFT` / `BUNNY_PULL_ZONE_ID_PROD`.
-- **submit-form.com**: Third-party form backend receiving contact form submissions at endpoint `2DIOCxGJ5`.
+- **formspark.io**: Third-party form backend receiving contact form submissions at endpoint `2DIOCxGJ5`.
 
 ## Success Criteria
 
@@ -136,6 +136,6 @@ All Netlify and Amplify configuration is removed from the repository so there is
 - **SC-003**: All six security headers currently served by Netlify are present in responses from both Bunny CDN environments (verified via `curl -I`).
 - **SC-004**: The redirect `/post/anything` → `/blog/anything` returns HTTP 301 on both environments.
 - **SC-005**: Zero references to `netlify.com`, `netlify.app`, or `amplify` remain in the repository (excluding git history and specs).
-- **SC-006**: The contact form in the footer submits successfully to submit-form.com and the submission is received.
+- **SC-006**: The contact form in the footer submits successfully to formspark.io and the submission is received.
 - **SC-007**: The Bunny CDN serves both environments with a time-to-first-byte under 200ms from EU locations.
 - **SC-008**: Hugo build failures prevent deployment — no partial or broken content reaches CDN.
