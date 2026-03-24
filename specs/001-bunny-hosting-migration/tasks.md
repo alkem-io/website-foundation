@@ -53,7 +53,7 @@
 ### Implementation
 
 - [ ] T010 [MANUAL] [P] [US2] Configure Edge Rule on draft pull zone: add response headers `X-Frame-Options: SAMEORIGIN`, `X-XSS-Protection: 1; mode=block`, `X-Content-Type-Options: nosniff`, `Report-To` (JSON blob per plan.md)
-- [ ] T011 [MANUAL] [P] [US2] Configure Edge Rule on draft pull zone: add `Content-Security-Policy` header per plan.md Phase 3 (Netlify domains removed, `submit-form.com` added to `form-action`)
+- [ ] T011 [MANUAL] [P] [US2] Configure Edge Rule on draft pull zone: add `Content-Security-Policy` header per plan.md Phase 3 (Netlify domains removed, `formspark.io` added to `form-action`)
 - [ ] T012 [MANUAL] [P] [US2] Configure Edge Rule on draft pull zone: redirect `/post/*` → `/blog/*` with 301 status
 - [ ] T013 [MANUAL] [P] [US2] Replicate all three Edge Rules (T010–T012) on the production pull zone
 - [ ] T014 [US2] Verify headers on draft: `curl -I https://<draft-pullzone-hostname>/` — confirm all headers present, no Netlify domains in CSP
@@ -65,19 +65,19 @@
 
 ## Phase 4: US3 — Contact Form Migration (Priority: P1)
 
-**Goal**: Footer contact form and contact page hero form submit to `submit-form.com/2DIOCxGJ5` instead of Netlify Forms.
+**Goal**: Footer contact form and contact page hero form submit to `formspark.io/2DIOCxGJ5` instead of Netlify Forms.
 
-**Independent Test**: Visit draft site, fill in the footer contact form, submit. Verify submission arrives in submit-form.com dashboard.
+**Independent Test**: Visit draft site, fill in the footer contact form, submit. Verify submission arrives in formspark.io dashboard.
 
 ### Implementation
 
-- [ ] T016 [P] [US3] Update `config/_default/params.toml` line 21: change `contact_form_action = "#"` to `contact_form_action = "https://submit-form.com/2DIOCxGJ5"`
-- [ ] T017 [P] [US3] Create project-level footer override at `layouts/partials/essentials/footer.html` — copy from `themes/fortify-hugo/layouts/partials/essentials/footer.html`, then modify the active contact form (lines 86–103): set `action="https://submit-form.com/2DIOCxGJ5"`, remove `data-netlify="true"` attribute, remove `netlify-honeypot="bot-field"` attribute, remove hidden `<input type="hidden" name="form-name" value="contact" />`, remove honeypot `<p class="hidden">...</p>` block. Keep all form fields (name, email, message) and styling intact.
-- [ ] T018 [US3] Verify locally: run `hugo server`, inspect footer form HTML — confirm action is `https://submit-form.com/2DIOCxGJ5`, confirm no Netlify attributes remain.
-- [ ] T019 [US3] Verify contact page hero form: run `hugo server`, navigate to contact page — confirm the hero form action is `https://submit-form.com/2DIOCxGJ5` (inherited from `contact_form_action` param).
-- [ ] T020 [US3] Deploy to draft (push to `develop`), submit test message via footer form, confirm submission received in submit-form.com dashboard.
+- [ ] T016 [P] [US3] Update `contact_form_action` in all three params.toml files: set `config/_default/params.toml` and `config/production/params.toml` to `"https://formspark.io/2DIOCxGJ5"`, set `config/draft/params.toml` to `"https://formspark.io/XxoAI8RE2"` (separate draft form endpoint)
+- [ ] T017 [P] [US3] Create project-level footer override at `layouts/partials/essentials/footer.html` — copy from `themes/fortify-hugo/layouts/partials/essentials/footer.html`, then modify the active contact form (lines 86–103): set `action="https://formspark.io/2DIOCxGJ5"`, remove `data-netlify="true"` attribute, remove `netlify-honeypot="bot-field"` attribute, remove hidden `<input type="hidden" name="form-name" value="contact" />`, remove honeypot `<p class="hidden">...</p>` block. Keep all form fields (name, email, message) and styling intact.
+- [ ] T018 [US3] Verify locally: run `hugo server`, inspect footer form HTML — confirm action is `https://formspark.io/2DIOCxGJ5`, confirm no Netlify attributes remain.
+- [ ] T019 [US3] Verify contact page hero form: run `hugo server`, navigate to contact page — confirm the hero form action is `https://formspark.io/2DIOCxGJ5` (inherited from `contact_form_action` param).
+- [ ] T020 [US3] Deploy to draft (push to `develop`), submit test message via footer form, confirm submission received in formspark.io dashboard.
 
-**Checkpoint**: Contact forms work on submit-form.com. No Netlify Forms dependency remains.
+**Checkpoint**: Contact forms work on formspark.io. No Netlify Forms dependency remains.
 
 ---
 
@@ -122,7 +122,7 @@
 - [ ] T034 [US1] Verify `https://alkemio.org` loads correctly with valid SSL
 - [ ] T035 [US2] Verify `curl -I https://alkemio.org/` returns all security headers
 - [ ] T036 [US2] Verify `curl -I https://alkemio.org/post/test` returns 301 redirect
-- [ ] T037 [US3] Submit contact form on `https://alkemio.org`, verify received in submit-form.com
+- [ ] T037 [US3] Submit contact form on `https://alkemio.org`, verify received in formspark.io
 - [ ] T038 [MANUAL] Decommission Netlify site (after DNS fully propagated and verified stable for 48+ hours)
 
 **Checkpoint**: Migration complete. Both environments live on Bunny.net. Netlify decommissioned.
@@ -167,6 +167,6 @@ T001–T006 → T007 → T008 → T010–T015 → T031–T032 → T033–T038
 ## Notes
 
 - Phase 1 (external setup) is the prerequisite for everything — do this first
-- Phase 4 (contact form) can be merged to `develop` and deployed to current Netlify safely — submit-form.com works from any host, so this is a zero-risk early merge
+- Phase 4 (contact form) can be merged to `develop` and deployed to current Netlify safely — formspark.io works from any host, so this is a zero-risk early merge
 - Phase 5 (cleanup) should be the last in-repo change — only after both environments are verified on Bunny
 - Keep Netlify active until at least 48 hours after DNS cutover to handle any propagation lag

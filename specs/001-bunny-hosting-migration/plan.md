@@ -6,7 +6,7 @@
 
 ## Summary
 
-Migrate the Alkemio Foundation Hugo website from Netlify to Bunny.net CDN with a two-environment deployment model (`develop` → `draft.alkemio.org`, `main` → `alkemio.org`). Replace Netlify's build/deploy/CDN/headers/forms with GitHub Actions CI/CD, Bunny Storage + Pull Zones, Bunny Edge Rules, and submit-form.com for the contact form.
+Migrate the Alkemio Foundation Hugo website from Netlify to Bunny.net CDN with a two-environment deployment model (`develop` → `draft.alkemio.org`, `main` → `alkemio.org`). Replace Netlify's build/deploy/CDN/headers/forms with GitHub Actions CI/CD, Bunny Storage + Pull Zones, Bunny Edge Rules, and formspark.io for the contact form.
 
 ## Technical Context
 
@@ -19,7 +19,7 @@ Migrate the Alkemio Foundation Hugo website from Netlify to Bunny.net CDN with a
 | **Current hosting** | Netlify (build + CDN + forms + headers + redirects) |
 | **Target hosting** | Bunny.net (Storage Zone + Pull Zone + Edge Rules) |
 | **CI/CD** | GitHub Actions (new) |
-| **Form backend** | submit-form.com (replacing Netlify Forms) |
+| **Form backend** | formspark.io (replacing Netlify Forms) |
 | **Environments** | Draft (`develop` → `draft.alkemio.org`), Production (`main` → `alkemio.org`) |
 | **Package manager** | npm |
 | **Node version** | 20 |
@@ -49,14 +49,14 @@ Migrate the Alkemio Foundation Hugo website from Netlify to Bunny.net CDN with a
 ### Contact form flow
 
 ```text
-Browser POST ──► https://submit-form.com/2DIOCxGJ5 ──► submit-form.com dashboard / email
+Browser POST ──► https://formspark.io/2DIOCxGJ5 ──► formspark.io dashboard / email
 ```
 
 ## Constitution Check
 
 | Principle | Impact | Notes |
 |---|---|---|
-| I. Hugo Theme Integrity | **Affected** — footer.html in theme must be modified to remove Netlify Forms attributes. This is a direct theme file edit, which the constitution discourages. However, the theme override mechanism (project-level `layouts/`) should be used instead. |
+| I. Hugo Theme Integrity | **Affected** — footer.html in theme must be modified to remove Netlify Forms attributes. The theme override mechanism (project-level `layouts/`) is used per Phase 4. |
 | III. Configuration Consistency | **Affected** — `netlify.toml` removed; deployment config moves to `.github/workflows/`. `params.toml` updated for form action. |
 | IV. Asset Pipeline | Not affected |
 | V. Internationalisation | Not affected |
@@ -66,20 +66,14 @@ Browser POST ──► https://submit-form.com/2DIOCxGJ5 ──► submit-form.c
 
 ## Changes Required
 
-### Phase 1: Contact Form Migration
+### Phase 1: External Setup (Manual Prerequisites)
 
-**Goal**: Replace Netlify Forms with submit-form.com so the form works regardless of hosting.
+**Goal**: Create the Bunny.net resources and GitHub secrets that the workflow and edge rules depend on. Nothing in-repo can be deployed until these exist.
 
-| # | File | Change |
-|---|---|---|
-| 1.1 | `config/_default/params.toml` | Set `contact_form_action = "https://submit-form.com/2DIOCxGJ5"` |
-| 1.2 | `layouts/partials/essentials/footer.html` | Create project-level override of the theme footer. Change the form: remove `data-netlify="true"`, `netlify-honeypot="bot-field"`, hidden `form-name` input, and honeypot `<p>`. Set `action="https://submit-form.com/2DIOCxGJ5"`. |
-
-**Files to create**:
-- `layouts/partials/essentials/footer.html` (override of theme file)
-
-**Files to modify**:
-- `config/_default/params.toml` (line 21: `contact_form_action`)
+- Create Bunny Storage Zones (draft + production, EU region)
+- Create Bunny Pull Zones (draft + production, with custom domains)
+- Provision SSL/TLS certificates on both pull zones
+- Add GitHub repository secrets: `BUNNY_API_KEY`, `BUNNY_STORAGE_ZONE_DRAFT`, `BUNNY_STORAGE_ZONE_PROD`, `BUNNY_STORAGE_API_KEY_DRAFT`, `BUNNY_STORAGE_API_KEY_PROD`, `BUNNY_PULL_ZONE_ID_DRAFT`, `BUNNY_PULL_ZONE_ID_PROD`
 
 ### Phase 2: GitHub Actions Workflow
 
@@ -155,7 +149,7 @@ These are configured in the Bunny.net dashboard (or via API), not in the repo. D
 
 2. **Redirect rule**: URL matches `/post/*` → 301 redirect to `/blog/*`
 
-3. **Updated CSP** (Netlify domains removed, submit-form.com added):
+3. **Updated CSP** (Netlify domains removed, formspark.io added):
    ```
    default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
    style-src 'self' 'unsafe-hashes' 'unsafe-inline' https://*.alkemio.org https://*.alkemio.foundation
@@ -165,16 +159,35 @@ These are configured in the Bunny.net dashboard (or via API), not in the repo. D
    font-src 'self' https://cdnjs.cloudflare.com https://api.fontshare.com https://use.fontawesome.com data:;
    connect-src 'self' https://cdn.segment.com;
    img-src 'self' blob: data: https:;
-   form-action 'self' https://submit-form.com;
+   form-action 'self' https://formspark.io;
    base-uri 'self';
    report-uri https://alkemio.report-uri.com/r/d/csp/enforce;
    ```
 
    **Changes from current CSP**:
    - Removed: `https://netlify.com`, `https://*.netlify.com`, `https://*.netlify.app`, `https://www.netlifystatus.com`
-   - Added: `https://submit-form.com` to `form-action`
+   - Added: `https://formspark.io` to `form-action`
 
-### Phase 4: Cleanup
+### Phase 4: Contact Form Migration
+
+**Goal**: Replace Netlify Forms with formspark.io so the form works regardless of hosting.
+
+| # | File | Change |
+|---|---|---|
+| 4.1 | `config/_default/params.toml` | Set `contact_form_action = "https://formspark.io/2DIOCxGJ5"` |
+| 4.2 | `config/draft/params.toml` | Set `contact_form_action = "https://formspark.io/XxoAI8RE2"` (separate draft endpoint) |
+| 4.3 | `config/production/params.toml` | Set `contact_form_action = "https://formspark.io/2DIOCxGJ5"` |
+| 4.4 | `layouts/partials/essentials/footer.html` | Create project-level override of the theme footer. Change the form: remove `data-netlify="true"`, `netlify-honeypot="bot-field"`, hidden `form-name` input, and honeypot `<p>`. Set `action` from `contact_form_action` param. |
+
+**Files to create**:
+- `layouts/partials/essentials/footer.html` (override of theme file)
+
+**Files to modify**:
+- `config/_default/params.toml` (line 21: `contact_form_action`)
+- `config/draft/params.toml` (`contact_form_action`)
+- `config/production/params.toml` (`contact_form_action`)
+
+### Phase 5: Cleanup
 
 **Goal**: Remove all Netlify/Amplify artifacts.
 
@@ -186,7 +199,7 @@ These are configured in the Bunny.net dashboard (or via API), not in the repo. D
 | 4.4 | `go.mod` | Update module path from `hugoplate.netlify.app` to a non-Netlify name (e.g., `alkemio.foundation`) |
 | 4.5 | `go.sum` | Regenerate after `go.mod` change |
 
-### Phase 5: DNS Cutover (Manual)
+### Phase 6: DNS Cutover (Manual)
 
 **Goal**: Point domains to Bunny Pull Zones.
 
@@ -220,14 +233,15 @@ Before the GitHub Actions workflow can deploy, these resources must exist in the
 |---|---|
 | DNS propagation delay during cutover | Deploy to Bunny first, verify, then switch DNS. Keep Netlify active until DNS fully propagates. |
 | Bunny Edge Rules don't support CSP complexity | Test CSP header length limits. Fallback: inject CSP via a Hugo `<meta>` tag in `<head>` (less ideal but works). |
-| submit-form.com downtime | Low risk — simple third-party service. Monitor for failed submissions. |
+| formspark.io downtime | Low risk — simple third-party service. Monitor for failed submissions. |
 | Hugo module path change breaks build | Test locally after `go.mod` module path update. Run `hugo mod tidy`. |
 | Theme update overwrites footer override | The project-level `layouts/` override takes priority. Document this in the constitution. |
 
 ## Implementation Order
 
-1. **Phase 1** — Contact form (can be deployed to current Netlify safely; submit-form.com works from any host)
+1. **Phase 1** — External setup (create Bunny zones, GitHub secrets — prerequisite for everything)
 2. **Phase 2** — GitHub Actions workflow (can be tested without DNS change)
-3. **Phase 3** — Bunny Edge Rules (manual, depends on zones existing)
-4. **Phase 5** — DNS cutover (only after all above verified)
-5. **Phase 4** — Cleanup (after DNS is stable on Bunny, remove Netlify/Amplify files)
+3. **Phase 3** — Bunny Edge Rules (manual, depends on zones from Phase 1)
+4. **Phase 4** — Contact form (can run in parallel with Phase 2/3; formspark.io works from any host)
+5. **Phase 5** — Cleanup (after Phases 2–4 verified on draft, remove Netlify/Amplify files)
+6. **Phase 6** — DNS cutover (only after all above verified)
