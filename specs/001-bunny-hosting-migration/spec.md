@@ -139,3 +139,4 @@ All Netlify and Amplify configuration is removed from the repository so there is
 - **SC-006**: The contact form in the footer submits successfully to formspark.io and the submission is received.
 - **SC-007**: The Bunny CDN serves both environments with a time-to-first-byte under 200ms from EU locations.
 - **SC-008**: Hugo build failures prevent deployment — no partial or broken content reaches CDN.
+- **SC-009**: All GitHub Actions workflows in the `alkem-io/website-foundation` repository are green (passing) on both `develop` and `main` branches.
