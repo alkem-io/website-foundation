@@ -1,0 +1,89 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [develop, main]
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  set-config:
+    runs-on: ubuntu-latest
+    outputs:
+      hugo_base_url: ${{ steps.config.outputs.hugo_base_url }}
+      hugo_environment: ${{ steps.config.outputs.hugo_environment }}
+      storage_zone: ${{ steps.config.outputs.storage_zone }}
+      pull_zone_id: ${{ steps.config.outputs.pull_zone_id }}
+      storage_api_key_name: ${{ steps.config.outputs.storage_api_key_name }}
+    steps:
+      - name: Set config
+        id: config
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "hugo_base_url=https://alkemio.org" >> "$GITHUB_OUTPUT"
+            echo "hugo_environment=production" >> "$GITHUB_OUTPUT"
+            echo "storage_zone=website-foundation" >> "$GITHUB_OUTPUT"
+            echo "pull_zone_id=5528657" >> "$GITHUB_OUTPUT"
+            echo "storage_api_key_name=prod" >> "$GITHUB_OUTPUT"
+          else
+            echo "hugo_base_url=https://draft.alkemio.org" >> "$GITHUB_OUTPUT"
+            echo "hugo_environment=draft" >> "$GITHUB_OUTPUT"
+            echo "storage_zone=website-foundation-draft" >> "$GITHUB_OUTPUT"
+            echo "pull_zone_id=5528531" >> "$GITHUB_OUTPUT"
+            echo "storage_api_key_name=draft" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: set-config
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.148.2'
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: hugo --gc --minify -b "${{ needs.set-config.outputs.hugo_base_url }}" --environment "${{ needs.set-config.outputs.hugo_environment }}"
+
+      - name: Set storage API key
+        run: |
+          if [ "${{ needs.set-config.outputs.storage_api_key_name }}" = "prod" ]; then
+            echo "BUNNY_STORAGE_API_KEY=${{ secrets.BUNNY_STORAGE_API_KEY_PROD }}" >> "$GITHUB_ENV"
+          else
+            echo "BUNNY_STORAGE_API_KEY=${{ secrets.BUNNY_STORAGE_API_KEY_DRAFT }}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Upload to Bunny Storage
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.2
+        with:
+          source: public
+          destination: /
+          storageZoneName: ${{ needs.set-config.outputs.storage_zone }}
+          storagePassword: ${{ env.BUNNY_STORAGE_API_KEY }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: ${{ needs.set-config.outputs.pull_zone_id }}
+          upload: "true"
+          remove: "true"
+          purgePullZone: "true"
