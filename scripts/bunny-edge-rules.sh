@@ -128,7 +128,7 @@ RULE_REPORT_TO='{
 }'
 
 # 4. Content-Security-Policy
-CSP="default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-hashes' 'unsafe-inline' https://*.alkemio.org https://*.alkemio.foundation https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://api.fontshare.com; script-src 'self' 'unsafe-hashes' 'unsafe-inline' 'unsafe-eval' https://cdn.segment.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com https://api.fontshare.com https://use.fontawesome.com data:; connect-src 'self' https://cdn.segment.com; img-src 'self' blob: data: https:; form-action 'self' https://formspark.io; base-uri 'self'; report-uri https://alkemio.report-uri.com/r/d/csp/enforce;"
+CSP="default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-hashes' 'unsafe-inline' https://*.alkemio.org https://*.alkemio.foundation https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://api.fontshare.com; script-src 'self' 'unsafe-hashes' 'unsafe-inline' 'unsafe-eval' https://cdn.segment.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com https://api.fontshare.com https://use.fontawesome.com data:; connect-src 'self' https://cdn.segment.com https://submit-form.com; img-src 'self' blob: data: https:; form-action 'self' https://submit-form.com; base-uri 'self'; report-uri https://alkemio.report-uri.com/r/d/csp/enforce;"
 
 RULE_CSP=$(cat <<ENDJSON
 {
