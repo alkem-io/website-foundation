@@ -29,7 +29,7 @@
         {{ partial "image" (dict "Src" .image "Alt" "logo icon" "Class" `absolute left-1/2 top-5 -z-10 w-20
         -translate-x-1/2 lg:-top-7`) }}
         <div class="rounded-2xl bg-light p-5 md:p-10">
-          <form class="row g-4 " action="{{ site.Params.contact_form_action }}" method="POST">
+          <form class="row g-4 " action="{{ site.Params.contact_form_action }}" method="POST" data-formspark>
             <div class="lg:col-6">
               <label for="f-name" class="form-label">
                 {{ T "first_name"}} <span class="text-red-500">*</span></label><input id="f-name" name="name"

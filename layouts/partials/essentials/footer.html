@@ -53,7 +53,7 @@
         <div class="rounded-2xl bg-light p-3 md:p-4 flex justify-center w-full">
           <div class="w-full max-w-s">
             <h3 class="mb-2 text-lg font-normal text-text-dark">{{ T "contact_us" }}</h3>
-            <form class="row g-2" name="contact" method="POST" action="{{ site.Params.contact_form_action }}">
+            <form class="row g-2" name="contact" method="POST" action="{{ site.Params.contact_form_action }}" data-formspark>
               <div class="flex flex-row gap-2 w-full mb-2"> <!-- Name and email side by side -->
                 <input id="name" name="name" class="form-input text-sm py-1 w-1/2" placeholder="Your Name" aria-label="Your Name" required type="text" />
                 <input id="email" name="email" class="form-input text-sm py-1 w-1/2" placeholder="Your Email" aria-label="Your Email" required type="email" />
@@ -74,3 +74,47 @@
     </div>
   </div>
 </footer>
+
+<!-- Formspark popup modal -->
+<div id="formspark-modal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:1rem; padding:2.5rem; max-width:400px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.15);">
+    <div style="width:56px; height:56px; margin:0 auto 1rem; background:#e6f9f0; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p style="font-size:1.25rem; font-weight:600; margin:0 0 0.5rem;">{{ T "thank_you" | default "Thank you!" }}</p>
+    <p style="font-size:0.95rem; color:#666; margin:0 0 1.5rem;">{{ T "form_success_message" | default "Your message has been sent. We'll get back to you soon." }}</p>
+    <button onclick="document.getElementById('formspark-modal').style.display='none'" class="btn btn-regular px-5 py-2">OK</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('form[data-formspark]').forEach(function(form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    }).then(function(res) {
+      if (res.ok) {
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = originalText;
+        document.getElementById('formspark-modal').style.display = 'flex';
+      } else {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        alert('Something went wrong. Please try again.');
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alert('Something went wrong. Please try again.');
+    });
+  });
+});
+</script>
