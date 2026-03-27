@@ -2,7 +2,7 @@
 meta_title: "Home - Alkemio Foundation"
 # Banner
 banner:
-  title: "Bridging the spaces between usXX"
+  title: "Bridging the spaces between usXXYY"
   description: "As society faces many complex challenges, we have significant talent and resources  available. <br /> Instead of fragmented efforts, we want to make it easier for people to align and collaborate towards shared goals. <br /> At scale, across all boundaries."
   image:
     # main: "/images/banner.png"
