@@ -147,6 +147,21 @@ RULE_CSP=$(cat <<ENDJSON
 ENDJSON
 )
 
+# 5. Redirect www.alkemio.org → alkemio.org (301) — production only
+RULE_WWW_REDIRECT='{
+  "ActionType": 1,
+  "ActionParameter1": "https://alkemio.org%{RequestURI}",
+  "ActionParameter2": "301",
+  "Triggers": [{
+    "Type": 0,
+    "PatternMatches": ["*www.alkemio.org*"],
+    "PatternMatchingType": 0
+  }],
+  "TriggerMatchingType": 0,
+  "Description": "Redirect www.alkemio.org to alkemio.org (301)",
+  "Enabled": true
+}'
+
 # --- Apply rules to each zone ---
 
 for zone_id in "${ZONE_IDS[@]}"; do
@@ -159,6 +174,11 @@ for zone_id in "${ZONE_IDS[@]}"; do
   add_edge_rule "$zone_id" "$RULE_CONTENT_TYPE"       "X-Content-Type-Options"
   add_edge_rule "$zone_id" "$RULE_REPORT_TO"          "Report-To"
   add_edge_rule "$zone_id" "$RULE_CSP"                "Content-Security-Policy"
+
+  # www redirect only for production
+  if [ "$zone_id" = "${BUNNY_PULL_ZONE_ID_PROD:-}" ]; then
+    add_edge_rule "$zone_id" "$RULE_WWW_REDIRECT"    "Redirect www → root"
+  fi
   echo "Done."
 done
 
