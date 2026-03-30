@@ -150,7 +150,7 @@ ENDJSON
 # 5. Redirect www.alkemio.org → alkemio.org (301) — production only
 RULE_WWW_REDIRECT='{
   "ActionType": 1,
-  "ActionParameter1": "https://alkemio.org%{RequestURI}",
+  "ActionParameter1": "https://alkemio.org/%{Path.0-}",
   "ActionParameter2": "301",
   "Triggers": [{
     "Type": 0,
