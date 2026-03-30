@@ -1,5 +1,5 @@
 # Use an official node image as a parent image
-FROM node:20
+FROM node:22
 
 # Set environment variables for versions
 ARG HUGO_VERSION=0.126.1
