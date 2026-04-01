@@ -87,7 +87,9 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/@botpoison/browser" async></script>
 <script>
+var _botpoisonPublicKey = 'pk_07e0f373-e1c7-4833-9068-e42b2acabc87';
 document.querySelectorAll('form[data-formspark]').forEach(function(form) {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -95,10 +97,15 @@ document.querySelectorAll('form[data-formspark]').forEach(function(form) {
     var originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending...';
-    fetch(form.action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    var botpoison = new window.Botpoison({ publicKey: _botpoisonPublicKey });
+    botpoison.challenge().then(function(result) {
+      var formData = Object.fromEntries(new FormData(form));
+      formData._botpoison = result.solution;
+      return fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      });
     }).then(function(res) {
       if (res.ok) {
         form.reset();
