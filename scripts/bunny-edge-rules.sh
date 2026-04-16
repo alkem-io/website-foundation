@@ -18,6 +18,11 @@ if [ -z "${BUNNY_API_KEY:-}" ]; then
   exit 1
 fi
 
+if ! command -v jq > /dev/null; then
+  echo "Error: jq is required (install via 'brew install jq' or 'apt-get install jq')" >&2
+  exit 1
+fi
+
 ZONE_IDS=()
 [ -n "${BUNNY_PULL_ZONE_ID_DRAFT:-}" ] && ZONE_IDS+=("$BUNNY_PULL_ZONE_ID_DRAFT")
 [ -n "${BUNNY_PULL_ZONE_ID_PROD:-}" ] && ZONE_IDS+=("$BUNNY_PULL_ZONE_ID_PROD")
@@ -29,10 +34,55 @@ fi
 
 FAILURES=0
 
+# Holds the current pull zone's existing edge rules (JSON array).
+# Repopulated by fetch_existing_rules at the start of each zone loop.
+EXISTING_RULES_JSON="[]"
+
+fetch_existing_rules() {
+  local zone_id="$1"
+  EXISTING_RULES_JSON=$(curl -s "${API_BASE}/pullzone/${zone_id}" \
+    -H "AccessKey: ${BUNNY_API_KEY}" \
+    | jq -c '.EdgeRules // []')
+}
+
+# Returns the Guid of a rule matching $description. If duplicates exist (from
+# prior runs that created instead of updated), keeps the first and deletes the
+# rest so the zone's rule count does not grow on each run.
+resolve_guid() {
+  local zone_id="$1"
+  local description="$2"
+  local guids first="" guid
+
+  guids=$(echo "$EXISTING_RULES_JSON" \
+    | jq -r --arg d "$description" '.[] | select(.Description == $d) | .Guid')
+
+  while IFS= read -r guid; do
+    [ -z "$guid" ] && continue
+    if [ -z "$first" ]; then
+      first="$guid"
+    else
+      echo "    (deleting duplicate: ${guid})" >&2
+      curl -s -X DELETE "${API_BASE}/pullzone/${zone_id}/edgerules/${guid}" \
+        -H "AccessKey: ${BUNNY_API_KEY}" > /dev/null
+    fi
+  done <<< "$guids"
+
+  echo "$first"
+}
+
 add_edge_rule() {
   local zone_id="$1"
   local payload="$2"
   local description="$3"
+  local rule_desc existing_guid
+
+  # Inject the existing Guid so addOrUpdate updates in place instead of creating
+  # a new rule each run (which silently fills up the zone's edge-rule cap).
+  rule_desc=$(echo "$payload" | jq -r '.Description')
+  existing_guid=$(resolve_guid "$zone_id" "$rule_desc")
+  if [ -n "$existing_guid" ]; then
+    payload=$(echo "$payload" | jq --arg g "$existing_guid" '. + {Guid: $g}')
+  fi
 
   echo "  Adding rule: ${description}"
   response=$(curl -s -w "\n%{http_code}" -X POST \
@@ -168,6 +218,9 @@ for zone_id in "${ZONE_IDS[@]}"; do
   echo ""
   echo "Configuring Pull Zone: ${zone_id}"
   echo "================================"
+
+  fetch_existing_rules "$zone_id"
+
   add_edge_rule "$zone_id" "$RULE_REDIRECT"         "Redirect /post/* → /blog/*"
   add_edge_rule "$zone_id" "$RULE_SECURITY_HEADERS"  "X-Frame-Options"
   add_edge_rule "$zone_id" "$RULE_XSS"               "X-XSS-Protection"
