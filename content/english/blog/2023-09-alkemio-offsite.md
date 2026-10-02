@@ -42,4 +42,4 @@ The road ahead is filled with possibilities, and together, we'll shape Alkemio's
 
 Thank you for being a part of the Alkemio community, and here's to an exciting future filled with growth, innovation, and success! 
 
-P.S. We'd love to hear your thoughts on where you see Alkemio in the next few years. Share your ideas and visions with us in the [Building Alkemio Space](https://alkem.io/building-alkemio/dashboard) or through [Linkedin](https://www.linkedin.com/company/alkemio-foundation/).
+P.S. We'd love to hear your thoughts on where you see Alkemio in the next few years. Share your ideas and visions with us in the [Building Alkemio Space](https://alkem.io/building-alkemio/dashboard) or through [Linkedin](https://www.linkedin.com/company/alkemio).

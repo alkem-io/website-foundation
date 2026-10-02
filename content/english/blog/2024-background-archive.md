@@ -57,4 +57,4 @@ By making the Challenge **central**, it gives a foundation/approach to ensuring 
 
 ## Want to contribute?
 
-[Contribute on GitHub](https://github.com/alkem-io) or [Follow us on LinkedIn](https://www.linkedin.com/company/alkemio-foundation/).
+[Contribute on GitHub](https://github.com/alkem-io) or [Follow us on LinkedIn](https://www.linkedin.com/company/alkemio).
