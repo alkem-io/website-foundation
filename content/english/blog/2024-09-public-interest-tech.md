@@ -103,7 +103,7 @@ Our focus has been, to date, on understanding the landscape in Europe and the US
 This is a large and fascinating field that has the potential to deeply impact our future.  
 
 
-If you know of any other exciting initiatives, we'd love to hear from you. You can get in touch [<u>here</u>](https://www.alkemio.org/contact/) or through [<u>our LinkedIn</u>](https://www.linkedin.com/company/alkemio-foundation/).  
+If you know of any other exciting initiatives, we'd love to hear from you. You can get in touch [<u>here</u>](https://www.alkemio.org/contact/) or through [<u>our LinkedIn</u>](https://www.linkedin.com/company/alkemio).  
 
 
 If you’d like to know more about what Alkemio is doing to help grow the public interest tech movement, [<u>reach out</u>](https://www.alkemio.org/contact/) to us or [<u>visit our platform</u>](https://welcome.alkem.io).

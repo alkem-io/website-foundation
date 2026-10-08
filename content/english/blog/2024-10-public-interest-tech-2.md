@@ -74,6 +74,6 @@ Sharing **successful examples** and fostering dialogue can help pave the way for
 
 **We invite you to share your thoughts and examples on effective ownership and governance models for public interest tech.**
 
-Feel free to reach out **[here](https://www.alkemio.org/contact/)** or connect with us on **[LinkedIn](https://www.linkedin.com/company/alkemio-foundation/)**.
+Feel free to reach out **[here](https://www.alkemio.org/contact/)** or connect with us on **[LinkedIn](https://www.linkedin.com/company/alkemio)**.
 
 If you’d like to learn more about Alkemio’s efforts to advance the public interest tech movement, **[reach out](https://www.alkemio.org/contact/)** or **[visit the Alkemio platform](https://welcome.alkem.io)**.
