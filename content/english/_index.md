@@ -2,7 +2,7 @@
 meta_title: "Home - Alkemio Foundation"
 # Banner
 banner:
-  title: "Bridging the spaces between us"
+  title: "Collaboration in the spaces between organisations"
   description: "As society faces many complex challenges, we have significant talent and resources  available. <br /> Instead of fragmented efforts, we want to make it easier for people to align and collaborate towards shared goals. <br /> At scale, across all boundaries."
   image:
     # main: "/images/banner.png"
@@ -19,7 +19,7 @@ banner:
 #Our Activities
 how_it_works:
   subtitle: "Our Activities"
-  title: "Empowering changemakers to <br> achieve their goals"
+  title: "Alkemio is a European digital platform for collaboration in the spaces between organisations."
   features:
     - title: "Research"
       description: "Conducting research to deepen understanding of ways of collaborating towards shared goals, at scale"

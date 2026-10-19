@@ -25,8 +25,6 @@ google_tag_manager = "" # example: G-XXXXXXXXXX
 custom_script = ""
 # copyright
 copyright = "Copyright © 2025 Stichting Alkemio. All Rights Reserved."
-#footer description
-footer_description = "Bridging the spaces between us"
 # address
 address = "Waldorpstraat 5, 2521 CA The Hague, The Netherlands"
 
@@ -125,14 +123,14 @@ action = "#"
 [[social]]
 title = "linkedin"
 icon = "fa-brands fa-linkedin" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://www.linkedin.com/company/alkemio-foundation"
+link = "https://www.linkedin.com/company/alkemio"
 
 [[social]]
 title = "github"
 icon = "fa-brands fa-github" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://www.github.com/alkem-io"
+link = "https://github.com/alkem-io"
 
 [[social]]
 title = "bluesky"
 icon = "fa-brands fa-bluesky" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://bsky.app/profile/alkem.io/"
+link = "https://bsky.app/profile/alkem.io"
