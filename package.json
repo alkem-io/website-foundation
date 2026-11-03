@@ -3,7 +3,7 @@
   "description": "Based on Fortify Template from GetHugoThemes",
   "version": "0.1.0",
   "license": "EU-PL",
-  "author": "ALkemio Foundation",
+  "author": "Alkemio Foundation",
   "scripts": {
     "dev": "hugo server",
     "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
