@@ -173,7 +173,7 @@ Alkemio would be delighted and honored if other parties would be able to learn f
 
 The English versions of the articles of association are unofficial translations, provided for information only. The Dutch notarial deeds are the only official and legally binding versions, and prevail in the event of any difference.
 
-The key document is probably the Alkemio Holding SHA, which together with the Alkemio Holding AoA ensures that that purpose remains central.
+The two key documents are probably the Alkemio Holding SHA, which together with the Alkemio Holding AoA ensures that the purpose remains central, and the Stichting Alkemio Steward Regulations, which set out who the stewards are and the requirements they must meet.
 
 Please feel free to reach out if you would like to discuss / learn from our journey so far!
 
