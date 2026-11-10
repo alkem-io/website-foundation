@@ -55,3 +55,12 @@ details[open] {
 details[open] > * {
   max-height: none !important;
 }
+
+/* Group structure diagram: let it extend beyond the text column on large screens */
+@media (min-width: 1024px) {
+  .content img[src*="alkemio-group-structure"] {
+    width: 114%;
+    max-width: none !important;
+    margin-left: -7%;
+  }
+}
