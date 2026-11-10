@@ -161,12 +161,15 @@ Alkemio would be delighted and honored if other parties would be able to learn f
 
 #### Key documents
 
-- **Stichting Alkemio Articles of Association (AoA)**: [official version](/legal/stichting_alkemio/stichting_alkemio-statuten_2025_09.pdf) (Dutch) | [unofficial translation](/legal/stichting_alkemio/stichting_alkemio-statuten_2025_09_en_unofficial_translation.pdf) (English)
-- **[Stichting Alkemio Steward Regulations](/legal/stichting_alkemio/stichting_alkemio_steward_regulations_v1.0.pdf)** (English)
-- **Alkemio Holding Articles of Association (AoA)**: [official version](/legal/alkemio_holding/alkemio_holding_statuten.pdf) (Dutch) | [unofficial translation](/legal/alkemio_holding/alkemio_holding_statuten_en_unofficial_translation.pdf) (English)
-- **[Alkemio Holding Shareholders Agreement (SHA)](/legal/alkemio_holding/alkemio_holding_shareholders_agreement_v2.0.pdf)** (English)
-- **[STAK Participanten Alkemio Articles of Association (AoA)](/legal/alkemio_participanten_stak/stak_participanten_alkemio_akte_oprichting.pdf)** (Dutch)
-- **[STAK Participanten Alkemio Conditions](/legal/alkemio_participanten_stak/stak_participanten_alkemio_administratievoorwaarden.pdf)** (Dutch)
+- **Stichting Alkemio**
+  - Articles of Association (AoA): [official version](/legal/stichting_alkemio/stichting_alkemio-statuten_2025_09.pdf) (Dutch) | [unofficial translation](/legal/stichting_alkemio/stichting_alkemio-statuten_2025_09_en_unofficial_translation.pdf) (English)
+  - [Steward Regulations](/legal/stichting_alkemio/stichting_alkemio_steward_regulations_v1.0.pdf) (English)
+- **Alkemio Holding**
+  - Articles of Association (AoA): [official version](/legal/alkemio_holding/alkemio_holding_statuten.pdf) (Dutch) | [unofficial translation](/legal/alkemio_holding/alkemio_holding_statuten_en_unofficial_translation.pdf) (English)
+  - [Shareholders Agreement (SHA)](/legal/alkemio_holding/alkemio_holding_shareholders_agreement_v2.0.pdf) (English)
+- **STAK Participanten Alkemio**
+  - [Articles of Association (AoA)](/legal/alkemio_participanten_stak/stak_participanten_alkemio_akte_oprichting.pdf) (Dutch)
+  - [Conditions](/legal/alkemio_participanten_stak/stak_participanten_alkemio_administratievoorwaarden.pdf) (Dutch)
 
 The English versions of the articles of association are unofficial translations, provided for information only. The Dutch notarial deeds are the only official and legally binding versions, and prevail in the event of any difference.
 
