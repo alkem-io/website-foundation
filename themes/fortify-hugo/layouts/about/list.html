@@ -119,7 +119,7 @@
         </p>
       </div>
       <div class="row items-stretch">
-        <div class="text-left lg:col-6 flex flex-col justify-stretch h-full mt-0" data-aos="fade-up-sm">
+        <div class="text-left lg:col-5 flex flex-col justify-stretch h-full mt-0" data-aos="fade-up-sm">
           <h2 class="mb-6">
             {{ .Params.banner_structure.title | markdownify }}
           </h2>
@@ -133,7 +133,7 @@
           {{ end }}
         </div>
         {{ if .Params.banner_structure.image }}
-          <div class="lg:col-6 col-12 flex items-stretch justify-center" data-aos="fade-up-sm" data-aos-delay="200">
+          <div class="lg:col-7 col-12 flex items-stretch justify-center" data-aos="fade-up-sm" data-aos-delay="200">
             <div class="w-full h-full flex items-stretch mt-0">
               {{ partial "image" (dict "Src" .Params.banner_structure.image "Alt" "Structure Image" "Class" "w-full h-full object-contain rounded-lg md:rounded-3xl") }}
             </div>
@@ -191,7 +191,7 @@
                     {{ partial "image" (dict "Src" .image "Alt" "Team Member Image" "Class" "w-full h-auto object-cover") }}
                   </div>
                   <div class="social-links">
-                    {{ if .bsky }}
+                    {{ if .linkedin }}
                       <a
                         href="{{ .linkedin }}"
                         target="_blank"
@@ -207,7 +207,7 @@
                         <i class="fab fa-github"></i
                       ></a>
                     {{ end }}
-                    {{ if .linkedin }}
+                    {{ if .bsky }}
                       <a
                         href="{{ .bsky }}"
                         target="_blank"

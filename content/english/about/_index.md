@@ -32,7 +32,7 @@ our_team:
   title: "Board of Directors"
   # subtitle: "Our Governance"
   description: 
-  - paragraph: "Incorporated as a Stitching under Dutch Law, Alkemio Foundation is governed by our Board of Directors.  The members of our Board of Directors are currently the Stewards of the Alkemio platform. We are currently undertaking the process to expand the number of stewards to increase diversity of thought and representation and enable the careful evolution of the platform."
+  - paragraph: "Incorporated as a Stitching under Dutch Law, Alkemio Foundation is governed by our Board of Directors.  The members of our Board of Directors are currently the Stewards of the Alkemio platform. There are five steward positions defined, each with its own role. Two further stewards joined the two founders in 2026, to increase diversity of thought and representation and enable the careful evolution of the platform. The fifth position is planned to be filled in 2027."
 
   roles:
     - paragraph: "• safeguard the purpose of the company"  
@@ -44,16 +44,24 @@ our_team:
   list:
     - name: "Neil Smyth"
       image: "/images/team/neil-smyth.jpg"
-      # title: Co-founder | CEO / CTO
+      title: "Founder nominee"
       bsky: https://neilsmyth.bsky.social/
       linkedin: https://www.linkedin.com/in/neilasmyth/
       github: https://github.com/techsmyth
     - name: "René Honig"
       image: "/images/team/rene-honig.jpg"
-      # title: Co-founder | Chief AI
+      title: "Founder nominee"
       bsky: https://renehonig.bsky.social/
       linkedin: https://www.linkedin.com/in/renehonig/
       github: https://github.com/renehonig
+    - name: "Simone Rietmeijer"
+      image: "/images/team/simone-rietmeijer.jpg"
+      title: "Employee steward"
+      linkedin: https://www.linkedin.com/in/szrietmeijer/
+    - name: "Fintan Smyth"
+      image: "/images/team/fintan-smyth.jpg"
+      title: "CC certificate holder steward"
+      linkedin: https://www.linkedin.com/in/fintan-smyth-cfa-76a9a212/
 
 banner_structure:
   title: "Introducing Alkemio's Structure"
